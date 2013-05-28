@@ -1,6 +1,7 @@
 package com.davidrapin.jlap.proxy;
 
 import com.davidrapin.jlap.client.ClientPool;
+import com.davidrapin.jlap.client.NetLoc;
 import com.davidrapin.jlap.ssl.SSLContextFactory;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -27,7 +28,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
 {
     //    private static final Charset US_ASCII = Charset.forName("US-ASCII");
     private final ClientPool clientPool;
-    private String sslServerKey = null;
+    private NetLoc targetServer = null;
 
     public HttpProxyHandler(ClientPool clientPool)
     {
@@ -62,27 +63,32 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     new DefaultFullHttpResponse(request.getProtocolVersion(), BAD_GATEWAY)
                 );
                 */
-                sslServerKey = request.getUri() + ":ssl";
+                targetServer = NetLoc.forRequest(request);
+
+                // send proxy OK to connect
                 requestContext.channel().write(new DefaultFullHttpResponse(request.getProtocolVersion(), OK)).addListener(
                     new ChannelFutureListener()
                     {
                         @Override
                         public void operationComplete(ChannelFuture future) throws Exception
                         {
-                            System.out.println("!! :)");
+                            // connect OK
+                            System.out.println("SSL Connect OK");
 
+                            // add SSL engine to receive communication
                             SSLEngine engine = SSLContextFactory.getServerContext().createSSLEngine();
                             engine.setUseClientMode(false);
                             final SslHandler sslhandler = new SslHandler(engine) {
                                 @Override
                                 public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
                                 {
-                                    System.out.println("> error : " + cause);
+                                    System.out.println("> SSL error : " + cause);
                                     //super.exceptionCaught(ctx, cause);
                                 }
                             };
                             future.channel().pipeline().addFirst("ssl-server", sslhandler);
 
+                            // start handshake
                             sslhandler.handshake(future.channel().newPromise());
                         }
                     }
@@ -93,7 +99,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
             }
             else
             {
-                clientPool.sendRequest(sslServerKey, requestCopy, new ResponseForwarder(requestContext, requestCopy));
+                clientPool.sendRequest(targetServer, requestCopy, new ResponseForwarder(requestContext, requestCopy));
             }
         }
     }

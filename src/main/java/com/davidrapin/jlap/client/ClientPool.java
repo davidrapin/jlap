@@ -5,7 +5,6 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.handler.codec.http.HttpRequest;
 
-import java.net.URL;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -18,7 +17,7 @@ import java.util.concurrent.ConcurrentMap;
 public class ClientPool
 {
     private final EventLoopGroup eventLoop;
-    private final ConcurrentMap<String, SSLCertificate> certificates = new ConcurrentHashMap<String, SSLCertificate>();
+    private final ConcurrentMap<NetLoc, SSLCertificate> certificates = new ConcurrentHashMap<NetLoc, SSLCertificate>();
 
     public ClientPool()
     {
@@ -31,21 +30,21 @@ public class ClientPool
     }
 
     // connected clients by clientKey
-    private final ConcurrentMap<String, HttpClient> connectedClients = new ConcurrentHashMap<String, HttpClient>();
+    private final ConcurrentMap<NetLoc, HttpClient> connectedClients = new ConcurrentHashMap<NetLoc, HttpClient>();
 
     public void sendRequest(HttpRequest r, HttpResponseListener listener)
     {
         sendRequest(null, r, listener);
     }
 
-    public void sendRequest(String serverKey, HttpRequest r, HttpResponseListener listener)
+    public void sendRequest(NetLoc netLoc, HttpRequest r, HttpResponseListener listener)
     {
-        if (serverKey == null) serverKey = getServerKey(r);
-        HttpClient client = getClient(r, serverKey);
+        if (netLoc == null) netLoc = NetLoc.forRequest(r);
+        HttpClient client = getClient(netLoc);
 
         // make URI relative
         String uri = r.getUri();
-        if (uri.startsWith("http"))
+        if (uri.startsWith("http://") || uri.startsWith("https://"))
         {
             int pathStart = uri.indexOf('/', 8);
             if (pathStart > 0) uri = uri.substring(pathStart);
@@ -53,7 +52,6 @@ public class ClientPool
         r.setUri(uri);
 
 //        logClientStates();
-
         client.request(r, listener);
     }
 
@@ -62,14 +60,14 @@ public class ClientPool
 //        String s = "";
 //        for (HttpClient c : connectedClients.values())
 //        {
-//            s += c.getServerKey() + "=" + c.countResponseListeners() + " | ";
+//            s += c.getHost() + "=" + c.countResponseListeners() + " | ";
 //        }
 //        System.out.println("listeners : [" + s.substring(0, s.length()-1) + "]");
 //    }
 
-    private synchronized HttpClient getClient(HttpRequest r, final String serverKey)
+    private synchronized HttpClient getClient(final NetLoc netLoc)
     {
-        HttpClient client = connectedClients.get(serverKey);
+        HttpClient client = connectedClients.get(netLoc);
         if (client == null)
         {
             client = new HttpClient(new HttpClientListener()
@@ -77,7 +75,7 @@ public class ClientPool
                 @Override
                 public void onServerCertificate(X509Certificate[] chain, String authType)
                 {
-                    certificates.put(serverKey, new SSLCertificate(chain, authType));
+                    certificates.put(netLoc, new SSLCertificate(chain, authType));
                 }
 
                 @Override
@@ -94,36 +92,26 @@ public class ClientPool
                 {
                     removeClient(c);
                 }
-            }, eventLoop, r);
-            connectedClients.put(client.getServerKey(), client);
+            }, eventLoop, netLoc);
+            connectedClients.put(client.getNetLoc(), client);
         }
         return client;
     }
 
     private HttpClient removeClient(HttpClient c)
     {
-        connectedClients.remove(c.getServerKey());
+        connectedClients.remove(c.getNetLoc());
         int listeners = c.countResponseListeners();
         if (listeners > 0)
         {
-            System.out.println("REMOVING CLIENT > " + c.getServerKey() + " (listeners: " + listeners + ")");
+            System.out.println("REMOVING CLIENT > " + c.getNetLoc() + " (listeners: " + listeners + ")");
         }
         return c;
     }
 
-    public SSLCertificate getCertificate(HttpRequest r)
+    public SSLCertificate getCertificate(NetLoc netLoc)
     {
-        String serverKey = getServerKey(r);
-        return certificates.get(serverKey);
+        return certificates.get(netLoc);
     }
 
-    public static String getServerKey(HttpRequest r)
-    {
-        URL url = HttpClient.getURL(r);
-        return HttpClient.getServerKey(
-            url.getHost(),
-            url.getPort() < 0 ? url.getDefaultPort() : url.getPort(),
-            url.getProtocol().equals("https")
-        );
-    }
 }

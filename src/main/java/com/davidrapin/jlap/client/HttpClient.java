@@ -10,10 +10,6 @@ import io.netty.handler.codec.http.HttpContent;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponse;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,62 +25,16 @@ public class HttpClient implements HttpResponseListener
     private static AtomicInteger c = new AtomicInteger(0);
 
     private final int id;
-    private final String host;
-    private final int port;
-    private final boolean ssl;
+    private final NetLoc netLoc;
 
     private ChannelFuture futureConnectedChannel;
 
     private final HttpClientListener clientListener;
     private final Queue<HttpResponseListener> responseListeners = new ConcurrentLinkedQueue<HttpResponseListener>();
 
-    public String getServerKey()
+    public NetLoc getNetLoc()
     {
-        return getServerKey(host, port, ssl);
-    }
-
-    public static String getServerKey(String host, int port, boolean ssl)
-    {
-        return host + ":" + port + (ssl ? ":ssl" : "");
-    }
-
-    public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, HttpRequest r)
-    {
-        this(clientListener, eventLoop, getURL(r));
-    }
-
-    public static URL getURL(HttpRequest r)
-    {
-        try
-        {
-            if (r.getUri().startsWith("h"))
-            {
-                return new URI(r.getUri()).toURL();
-            }
-            else
-            {
-                return new URI("http://" + r.headers().get("Host") + r.getUri()).toURL();
-            }
-        }
-        catch (MalformedURLException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (URISyntaxException e)
-        {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, URL u)
-    {
-        this(
-            clientListener,
-            eventLoop,
-            u.getHost(),
-            u.getPort() < 0 ? u.getDefaultPort() : u.getPort(),
-            u.getProtocol().equals("https")
-        );
+        return netLoc;
     }
 
     public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, String host)
@@ -94,15 +44,13 @@ public class HttpClient implements HttpResponseListener
 
     public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, String host, int port)
     {
-        this(clientListener, eventLoop, host, port, false);
+        this(clientListener, eventLoop, new NetLoc(host, port, false));
     }
 
-    public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, String host, int port, boolean ssl)
+    public HttpClient(HttpClientListener clientListener, EventLoopGroup eventLoop, NetLoc netLoc)
     {
         this.clientListener = clientListener;
-        this.host = host;
-        this.port = port;
-        this.ssl = ssl;
+        this.netLoc = netLoc;
         id = c.incrementAndGet();
 
         logState("started");
@@ -112,7 +60,7 @@ public class HttpClient implements HttpResponseListener
 
     protected void logState(String state)
     {
-        System.out.println(System.currentTimeMillis() + " [CLIENT-" + id + " " + host + ":" + port + (ssl ? " SSL" : "") + "] :" + state);
+        System.out.println(System.currentTimeMillis() + " [CLIENT-" + id + " " + netLoc + "] :" + state);
     }
 
     private void connect(EventLoopGroup eventLoop)
@@ -123,10 +71,10 @@ public class HttpClient implements HttpResponseListener
         {
             bootstrap.group(eventLoop)
                 .channel(NioSocketChannel.class)
-                .handler(new HttpClientChannelInitializer(ssl, clientListener, this));
+                .handler(new HttpClientChannelInitializer(netLoc.ssl, clientListener, this));
 
             // Make the connection attempt.
-            futureConnectedChannel = bootstrap.connect(host, port);
+            futureConnectedChannel = bootstrap.connect(netLoc.host, netLoc.port);
             futureConnectedChannel.addListener(new ChannelFutureListener()
             {
                 @Override
