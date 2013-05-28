@@ -100,7 +100,7 @@
       <module fileurl="file://$PROJECT_DIR$/jlap.iml" filepath="$PROJECT_DIR$/jlap.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6.0_12" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
@@ -125,6 +125,17 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
+    <library name="Maven: bouncycastle:bcprov-jdk16:136">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.barchart.udt:barchart-udt-bundle:2.2.5">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/barchart/udt/barchart-udt-bundle/2.2.5/barchart-udt-bundle-2.2.5.jar!/" />
@@ -356,15 +367,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/rxtx/rxtx/2.1.7/rxtx-2.1.7-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.slf4j:slf4j-api:1.7.2">
+    <library name="Maven: org.slf4j:slf4j-api:1.7.5">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:slf4j-log4j12:1.7.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.testng:testng:6.1.1">
@@ -389,22 +411,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.6/snakeyaml-1.6-sources.jar!/" />
       </SOURCES>
     </library>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
 

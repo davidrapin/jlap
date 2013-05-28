@@ -4,20 +4,51 @@
     <list default="true" id="13abfeb1-0624-434d-88bb-a8204a3dd8bf" name="Default" comment="" />
     <ignored path="jlap.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367312838597" ignored="false" />
-    <file path="/Proxy.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363101291289" ignored="false" />
+    <file path="/pom.xml" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369695792843" ignored="false" />
+    <file path="/Proxy.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367533749765" ignored="false" />
     <file path="/HttpSnoopServerHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362679108150" ignored="false" />
     <file path="/a.dummy" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362678618881" ignored="false" />
     <file path="/TestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362682906746" ignored="false" />
-    <file path="/fragment.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362754428885" ignored="false" />
-    <file path="/Dummy.txt" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363097365186" ignored="false" />
+    <file path="/fragment.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369696549281" ignored="false" />
+    <file path="/Dummy.txt" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369689862921" ignored="false" />
     <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/HttpServerPipelineFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363099446996" ignored="false" />
     <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/DefaultHttpProxyServer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363100900985" ignored="false" />
     <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/DefaultRelayPipelineFactoryFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363101200660" ignored="false" />
     <file path="/HttpServerPipelineFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363101568915" ignored="false" />
     <file path="/HttpServerPipelineInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367312503814" ignored="false" />
-    <file path="/HttpRequestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367312392802" ignored="false" />
-    <file path="$MAVEN_REPOSITORY$/fr/ina/dlweb/dlweb-maven-parent/1.0-SNAPSHOT/dlweb-maven-parent-1.0-SNAPSHOT.pom" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367312356622" ignored="false" />
+    <file path="/HttpRequestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369567552421" ignored="false" />
+    <file path="/ProxyTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367532620796" ignored="false" />
+    <file path="/JLAPChannelInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367534113875" ignored="false" />
+    <file path="/HttpProxyHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369704226328" ignored="false" />
+    <file path="/HttpProxyChannelInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369607512828" ignored="false" />
+    <file path="/HTTPSHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367536968468" ignored="false" />
+    <file path="/HttpClient.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369701355234" ignored="false" />
+    <file path="/HttpCLientInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1368978344062" ignored="false" />
+    <file path="/HttpClientInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369079270750" ignored="false" />
+    <file path="/ClientTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369696786281" ignored="false" />
+    <file path="/HttpClientListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369688608375" ignored="false" />
+    <file path="/HttpListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369180584593" ignored="false" />
+    <file path="/ClientPool.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369704301453" ignored="false" />
+    <file path="/ClientListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369177473703" ignored="false" />
+    <file path="/Netloc.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369182160343" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/Netloc.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369182216921" ignored="false" />
+    <file path="/ClientPoolTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369429956765" ignored="false" />
+    <file path="/ResponseListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369610900750" ignored="false" />
+    <file path="/HttpClientPipeline.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369531031656" ignored="false" />
+    <file path="/TrustManager.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369426002171" ignored="false" />
+    <file path="/ResponseForwarder.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369613538656" ignored="false" />
+    <file path="/log4j.properties" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369436581703" ignored="false" />
+    <file path="/HttpProxy.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369598793312" ignored="false" />
+    <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/HttpRequestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369574000953" ignored="false" />
+    <file path="/HttpClientChannelInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369701457281" ignored="false" />
+    <file path="/HttpResponseListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369614296921" ignored="false" />
+    <file path="/ClientTrustManager.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690546515" ignored="false" />
+    <file path="/DummyTrustManager.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369688724109" ignored="false" />
+    <file path="/TrustManagerFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690563796" ignored="false" />
+    <file path="/SslContextFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690557078" ignored="false" />
+    <file path="/SSLContextFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369701151984" ignored="false" />
+    <file path="/SSLCertificate.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690968890" ignored="false" />
+    <file path="/SSLUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369699972265" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +63,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -40,7 +70,6 @@
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
@@ -57,7 +86,6 @@
         <option name="ENABLED" value="false" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
         <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
@@ -69,6 +97,37 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java" line="65" class="com.davidrapin.jlap.proxy.HttpProxyHandler" package="com.davidrapin.jlap.proxy">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java" line="95" class="com.davidrapin.jlap.proxy.HttpProxyHandler" package="com.davidrapin.jlap.proxy">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -78,91 +137,120 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HttpSnoopServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/http/snoop/HttpSnoopServer.java">
+      <file leaf-file-name="HttpProxyHandler.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="14" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+            <state line="95" column="0" selection-start="3654" selection-end="3654" vertical-scroll-proportion="0.33333334">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2409#3550#0" expanded="true" />
+                <element signature="e#3527#3528#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientPool.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="43" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#592#616#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseForwarder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/ResponseForwarder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="42" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HexDumpProxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/proxy/HexDumpProxy.java">
+      <file leaf-file-name="SslHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/ssl/SslHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0">
+            <state line="656" column="18" selection-start="24142" selection-end="24142" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#41993#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#7176#7192#0" expanded="false" />
+                <element signature="e#11656#12103#0" expanded="false" />
+                <element signature="e#12088#12089#0" expanded="false" />
+                <element signature="e#12246#12858#0" expanded="false" />
+                <element signature="e#12847#12848#0" expanded="false" />
+                <element signature="e#13309#13774#0" expanded="false" />
+                <element signature="e#13763#13764#0" expanded="false" />
+                <element signature="e#38747#39103#0" expanded="false" />
+                <element signature="e#39088#39089#0" expanded="false" />
+                <element signature="e#39634#39975#0" expanded="false" />
+                <element signature="e#39960#39961#0" expanded="false" />
+                <element signature="e#40186#40577#0" expanded="false" />
+                <element signature="e#40566#40567#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpClientChannelInitializer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="68" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="HttpProxy.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="24" selection-start="2141" selection-end="2141" vertical-scroll-proportion="0.47947112">
+            <state line="16" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocksServer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/socksproxy/SocksServer.java">
+      <file leaf-file-name="HttpProxyChannelInitializer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyChannelInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="19" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
+            <state line="35" column="41" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocksServerInitializer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/socksproxy/SocksServerInitializer.java">
+      <file leaf-file-name="ChannelHandlerUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/channel/ChannelHandlerUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="43" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="61" column="0" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#11853#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2003#2033#1" expanded="false" />
+                <element signature="e#3800#3830#1" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocksInitRequestDecoder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/socks/SocksInitRequestDecoder.java">
+      <file leaf-file-name="SSLContextFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="13" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="77" column="26" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpRequestHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpRequestHandler.java">
+      <file leaf-file-name="KeyStore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="12" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Proxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/Proxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="36" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProxyTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/ProxyTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="44" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpSnoopServerHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/http/snoop/HttpSnoopServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="13" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.0">
+            <state line="1181" column="22" selection-start="39263" selection-end="39263" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,16 +266,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$MAVEN_REPOSITORY$/fr/ina/dlweb/dlweb-maven-parent/1.0-SNAPSHOT/dlweb-maven-parent-1.0-SNAPSHOT.pom" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpSnoopServerHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpSnoopServerInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/TestHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/ProxyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/Proxy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpServerPipelineFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpRequestHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpServerPipelineInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/TrustManagerFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/SSLContextFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/SSLCertificate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/SSLUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/PKCS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/PKCS1EncodedKeySpec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/TrustManagerFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java" />
       </list>
     </option>
   </component>
@@ -224,23 +318,13 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Profiles" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProfilesNode" />
-        </PATH_ELEMENT>
-      </PATH>
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1058" />
-    <option name="height" value="1660" />
+    <option name="x" value="469" />
+    <option name="y" value="-15" />
+    <option name="width" value="1206" />
+    <option name="height" value="1037" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -272,7 +356,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -319,7 +403,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,119 +477,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="socksproxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: io.netty:netty-example:4.0.0.CR1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-example-4.0.0.CR1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: io.netty:netty-example:4.0.0.CR1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-example-4.0.0.CR1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: io.netty:netty-example:4.0.0.CR1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-example-4.0.0.CR1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="snoop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: io.netty:netty-example:4.0.0.CR1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="netty-example-4.0.0.CR1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file" />
+              <option name="myItemId" value="securechat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,6 +508,36 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -560,7 +561,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
+              <option name="myItemId" value="ssl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,18 +590,86 @@
               <option name="myItemId" value="jlap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proxy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LittleProxy" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -609,15 +678,171 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.ProxyTest">
-    <configuration default="false" name="ProxyTest" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.davidrapin.jlap.client" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.davidrapin.jlap" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\jlap\src\main\resources\com\davidrapin\jlap\ssl" />
+      <recent name="D:\Code\jlap\src\main\resources\com\davidrapin\jlap" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.davidrapin.jlap" />
+      <recent name="com.davidrapin.jlap.client" />
+      <recent name="com.davidrapin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SSLUtils">
+    <configuration default="false" name="ProxyTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="fr.ina.dlweb.jlap.*" />
+          <option name="PATTERN" value="com.davidrapin.jlap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="fr.ina.dlweb.jlap.ProxyTest" />
+      <module name="jlap" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ProxyTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1763" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ClientPoolTest.test" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.davidrapin.jlap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="jlap" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ClientPoolTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4477" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ClientPoolTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.davidrapin.jlap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="jlap" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ClientPoolTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1268" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LICENSE" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.bouncycastle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="org.bouncycastle.LICENSE" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SSLUtils" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.davidrapin.jlap.ssl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ssl.SSLUtils" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -633,7 +858,9 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -642,19 +869,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -685,6 +899,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -700,12 +927,41 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.ProxyTest" />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="TestNG.ProxyTest" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.ClientPoolTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.LICENSE" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SSLUtils" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.ProxyTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="TestNG.ProxyTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SSLUtils" />
+        <item index="2" class="java.lang.String" itemvalue="Application.LICENSE" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.ClientPoolTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -723,28 +979,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1058" height="1660" extended-state="6" />
+    <frame x="469" y="-15" width="1206" height="1037" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26545218" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28445426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35339168" sideWeight="0.99889624" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26240352" sideWeight="0.14137086" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32745314" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22200584" sideWeight="0.7449577" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35756972" sideWeight="0.7345478" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22073579" sideWeight="0.6466083" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35416666" sideWeight="0.6466083" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28654972" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29681274" sideWeight="0.7345478" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33277592" sideWeight="0.6466083" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -774,7 +1031,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -784,10 +1041,6 @@
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="LIMIT_HISTORY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
@@ -801,7 +1054,6 @@
     <option name="ACTIVE_VCS_NAME" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
@@ -813,118 +1065,237 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.Beta2/netty-all-4.0.0.Beta2-sources.jar!/io/netty/handler/codec/http/FullHttpRequest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/http/DefaultHttpMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
+        <state line="46" column="0" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1.jar!/io/netty/handler/codec/http/HttpRequestDecoder.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/http/DefaultFullHttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="313" selection-end="313" vertical-scroll-proportion="-5.44">
+        <state line="31" column="0" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpServerPipelineInitializer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/http/DefaultHttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="46" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0">
+        <state line="42" column="0" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1.jar!/io/netty/example/http/snoop/HttpSnoopClient.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/securechat/SecureChatSslContextFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+        <state line="52" column="19" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/http/snoop/HttpSnoopClient.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/securechat/SecureChatServerInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="28" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
+        <state line="49" column="39" selection-start="1852" selection-end="1988" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/HttpRequestHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="12" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0">
+        <state line="172" column="29" selection-start="5502" selection-end="5502" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1181#1203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/channel/ChannelHandlerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#11853#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2003#2033#1" expanded="false" />
+            <element signature="e#3800#3830#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1181" column="22" selection-start="39263" selection-end="39263" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/Proxy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="36" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
+        <state line="77" column="26" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="68" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/ina/dlweb/jlap/ProxyTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="44" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0">
+        <state line="16" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/http/snoop/HttpSnoopServerHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/ResponseForwarder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="13" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.0">
+        <state line="22" column="42" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/http/snoop/HttpSnoopServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyChannelInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="14" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0">
+        <state line="35" column="41" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/proxy/HexDumpProxy.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/ssl/SslHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="656" column="18" selection-start="24142" selection-end="24142" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#41993#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7176#7192#0" expanded="false" />
+            <element signature="e#11656#12103#0" expanded="false" />
+            <element signature="e#12088#12089#0" expanded="false" />
+            <element signature="e#12246#12858#0" expanded="false" />
+            <element signature="e#12847#12848#0" expanded="false" />
+            <element signature="e#13309#13774#0" expanded="false" />
+            <element signature="e#13763#13764#0" expanded="false" />
+            <element signature="e#38747#39103#0" expanded="false" />
+            <element signature="e#39088#39089#0" expanded="false" />
+            <element signature="e#39634#39975#0" expanded="false" />
+            <element signature="e#39960#39961#0" expanded="false" />
+            <element signature="e#40186#40577#0" expanded="false" />
+            <element signature="e#40566#40567#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/socksproxy/SocksServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="842" selection-end="842" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="40" column="43" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#592#616#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/socksproxy/SocksServerInitializer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="43" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="95" column="0" selection-start="3654" selection-end="3654" vertical-scroll-proportion="0.33333334">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2409#3550#0" expanded="true" />
+            <element signature="e#3527#3528#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1.jar!/io/netty/handler/codec/socks/SocksInitRequestDecoder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/socks/SocksInitRequestDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="24" selection-start="2141" selection-end="2141" vertical-scroll-proportion="0.47947112">
-          <folding />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>jlap</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.barchart.udt:barchart-udt-bundle:2.2.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
