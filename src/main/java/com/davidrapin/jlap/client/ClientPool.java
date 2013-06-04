@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentMap;
 public class ClientPool
 {
     private final EventLoopGroup eventLoop;
-    private final ConcurrentMap<NetLoc, SSLCertificate> certificates = new ConcurrentHashMap<NetLoc, SSLCertificate>();
+//    private final ConcurrentMap<NetLoc, SSLCertificate> certificates = new ConcurrentHashMap<NetLoc, SSLCertificate>();
 
     public ClientPool()
     {
@@ -40,7 +40,7 @@ public class ClientPool
     public void sendRequest(NetLoc netLoc, HttpRequest r, HttpResponseListener listener)
     {
         if (netLoc == null) netLoc = NetLoc.forRequest(r);
-        HttpClient client = getClient(netLoc);
+        HttpClient client = getClient(netLoc, null);
 
         // make URI relative
         String uri = r.getUri();
@@ -65,7 +65,7 @@ public class ClientPool
 //        System.out.println("listeners : [" + s.substring(0, s.length()-1) + "]");
 //    }
 
-    private synchronized HttpClient getClient(final NetLoc netLoc)
+    private synchronized HttpClient getClient(final NetLoc netLoc, final ConnectListener connectListener)
     {
         HttpClient client = connectedClients.get(netLoc);
         if (client == null)
@@ -75,7 +75,9 @@ public class ClientPool
                 @Override
                 public void onServerCertificate(X509Certificate[] chain, String authType)
                 {
-                    certificates.put(netLoc, new SSLCertificate(chain, authType));
+                    SSLCertificate certificate = new SSLCertificate(chain, authType);
+//                    certificates.put(netLoc, certificate);
+                    if (connectListener != null) connectListener.onSuccess(certificate);
                 }
 
                 @Override
@@ -85,6 +87,7 @@ public class ClientPool
                 public void onConnectionFailed(HttpClient c)
                 {
                     removeClient(c);
+                    if (connectListener != null) connectListener.onFailure();
                 }
 
                 @Override
@@ -93,7 +96,7 @@ public class ClientPool
                     removeClient(c);
                 }
             }, eventLoop, netLoc);
-            connectedClients.put(client.getNetLoc(), client);
+            connectedClients.put(netLoc, client);
         }
         return client;
     }
@@ -109,9 +112,13 @@ public class ClientPool
         return c;
     }
 
-    public SSLCertificate getCertificate(NetLoc netLoc)
-    {
-        return certificates.get(netLoc);
-    }
+//    public SSLCertificate getCertificate(NetLoc netLoc)
+//    {
+//        return certificates.get(netLoc);
+//    }
 
+    public void connect(NetLoc targetServer, ConnectListener listener)
+    {
+        getClient(targetServer, listener);
+    }
 }

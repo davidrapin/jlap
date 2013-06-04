@@ -1,7 +1,9 @@
 package com.davidrapin.jlap.proxy;
 
 import com.davidrapin.jlap.client.ClientPool;
+import com.davidrapin.jlap.client.ConnectListener;
 import com.davidrapin.jlap.client.NetLoc;
+import com.davidrapin.jlap.ssl.SSLCertificate;
 import com.davidrapin.jlap.ssl.SSLContextFactory;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -15,6 +17,7 @@ import io.netty.util.CharsetUtil;
 import javax.net.ssl.SSLEngine;
 
 import static io.netty.handler.codec.http.HttpHeaders.*;
+import static io.netty.handler.codec.http.HttpResponseStatus.BAD_GATEWAY;
 import static io.netty.handler.codec.http.HttpResponseStatus.CONTINUE;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -66,36 +69,49 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                 targetServer = NetLoc.forRequest(request);
 
                 // send proxy OK to connect
-                requestContext.channel().write(new DefaultFullHttpResponse(request.getProtocolVersion(), OK)).addListener(
-                    new ChannelFutureListener()
+                clientPool.connect(targetServer, new ConnectListener()
+                {
+                    @Override
+                    public void onSuccess(final SSLCertificate serverCertificate)
                     {
-                        @Override
-                        public void operationComplete(ChannelFuture future) throws Exception
-                        {
-                            // connect OK
-                            System.out.println("SSL Connect OK");
-
-                            // add SSL engine to receive communication
-                            SSLEngine engine = SSLContextFactory.getServerContext().createSSLEngine();
-                            engine.setUseClientMode(false);
-                            final SslHandler sslhandler = new SslHandler(engine) {
+                        requestContext.channel().write(new DefaultFullHttpResponse(requestCopy.getProtocolVersion(), OK)).addListener(
+                            new ChannelFutureListener()
+                            {
                                 @Override
-                                public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
+                                public void operationComplete(ChannelFuture future) throws Exception
                                 {
-                                    System.out.println("> SSL error : " + cause);
-                                    //super.exceptionCaught(ctx, cause);
+                                    // connect OK
+                                    System.out.println("SSL Connect OK");
+
+                                    // add SSL engine to receive communication
+                                    SSLEngine engine = SSLContextFactory.createServerContext(targetServer, serverCertificate).createSSLEngine();
+                                    engine.setUseClientMode(false);
+                                    final SslHandler sslhandler = new SslHandler(engine)
+                                    {
+                                        @Override
+                                        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
+                                        {
+                                            System.out.println("> SSL error : " + cause);
+                                            //super.exceptionCaught(ctx, cause);
+                                        }
+                                    };
+                                    future.channel().pipeline().addFirst("ssl-server", sslhandler);
+
+                                    // start handshake
+                                    sslhandler.handshake(future.channel().newPromise());
                                 }
-                            };
-                            future.channel().pipeline().addFirst("ssl-server", sslhandler);
-
-                            // start handshake
-                            sslhandler.handshake(future.channel().newPromise());
-                        }
+                            }
+                        );
                     }
-                );
-                /*
 
-                */
+                    @Override
+                    public void onFailure()
+                    {
+                        requestContext.channel()
+                            .write(new DefaultFullHttpResponse(requestCopy.getProtocolVersion(), BAD_GATEWAY))
+                            .addListener(ChannelFutureListener.CLOSE);
+                    }
+                });
             }
             else
             {

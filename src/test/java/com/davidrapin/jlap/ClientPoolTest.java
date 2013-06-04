@@ -1,6 +1,9 @@
 package com.davidrapin.jlap;
 
 import com.davidrapin.jlap.client.ClientPool;
+import com.davidrapin.jlap.client.NetLoc;
+import com.davidrapin.jlap.ssl.SSLCertificate;
+import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.DefaultFullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
 import io.netty.handler.codec.http.HttpRequest;
@@ -42,10 +45,11 @@ public class ClientPoolTest
 
     public void test2() throws InterruptedException
     {
-        ClientPool p = new ClientPool();
+        final ClientPool p = new ClientPool();
 
-        HttpRequest r1 = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "https://www.google.fr/");
+        final HttpRequest r1 = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "https://www.google.fr/");
         r1.headers().add("Host", "www.google.fr");
+        final NetLoc n = NetLoc.forRequest(r1);
 
         p.sendRequest(r1, new ResponseListener("r1"));
 

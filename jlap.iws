@@ -7,9 +7,9 @@
     <file path="/pom.xml" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369695792843" ignored="false" />
     <file path="/Proxy.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367533749765" ignored="false" />
     <file path="/HttpSnoopServerHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362679108150" ignored="false" />
-    <file path="/a.dummy" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369775563484" ignored="false" />
+    <file path="/a.dummy" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370304444375" ignored="false" />
     <file path="/TestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1362682906746" ignored="false" />
-    <file path="/fragment.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369696549281" ignored="false" />
+    <file path="/fragment.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370303637078" ignored="false" />
     <file path="/Dummy.txt" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369689862921" ignored="false" />
     <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/HttpServerPipelineFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363099446996" ignored="false" />
     <file path="$PROJECT_DIR$/../LittleProxy/src/main/java/org/littleshoot/proxy/DefaultHttpProxyServer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1363100900985" ignored="false" />
@@ -19,7 +19,7 @@
     <file path="/HttpRequestHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369567552421" ignored="false" />
     <file path="/ProxyTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367532620796" ignored="false" />
     <file path="/JLAPChannelInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367534113875" ignored="false" />
-    <file path="/HttpProxyHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369775655062" ignored="false" />
+    <file path="/HttpProxyHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370300386093" ignored="false" />
     <file path="/HttpProxyChannelInitializer.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369607512828" ignored="false" />
     <file path="/HTTPSHandler.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1367536968468" ignored="false" />
     <file path="/HttpClient.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369775141781" ignored="false" />
@@ -28,11 +28,11 @@
     <file path="/ClientTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369696786281" ignored="false" />
     <file path="/HttpClientListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369688608375" ignored="false" />
     <file path="/HttpListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369180584593" ignored="false" />
-    <file path="/ClientPool.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369775230468" ignored="false" />
+    <file path="/ClientPool.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370302076468" ignored="false" />
     <file path="/ClientListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369177473703" ignored="false" />
     <file path="/Netloc.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369182160343" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/Netloc.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369182216921" ignored="false" />
-    <file path="/ClientPoolTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369429956765" ignored="false" />
+    <file path="/ClientPoolTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370298883984" ignored="false" />
     <file path="/ResponseListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369610900750" ignored="false" />
     <file path="/HttpClientPipeline.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369531031656" ignored="false" />
     <file path="/TrustManager.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369426002171" ignored="false" />
@@ -46,10 +46,22 @@
     <file path="/DummyTrustManager.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369688724109" ignored="false" />
     <file path="/TrustManagerFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690563796" ignored="false" />
     <file path="/SslContextFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690557078" ignored="false" />
-    <file path="/SSLContextFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369701151984" ignored="false" />
+    <file path="/SSLContextFactory.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370305114031" ignored="false" />
     <file path="/SSLCertificate.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369690968890" ignored="false" />
-    <file path="/SSLUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369699972265" ignored="false" />
+    <file path="/SSLUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370303730375" ignored="false" />
     <file path="/Host.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369775478953" ignored="false" />
+    <file path="/NewCaModule.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369950860843" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/es/sing/util/GeneraClaves.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369948575468" ignored="false" />
+    <file path="/KeyGenerator.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369948692312" ignored="false" />
+    <file path="/CertificateUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369952590843" ignored="false" />
+    <file path="/NewCertificateRequestModule.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369955194578" ignored="false" />
+    <file path="/X509DirName.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1369956906156" ignored="false" />
+    <file path="/X500String.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370298545093" ignored="false" />
+    <file path="/X500NameUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370297449640" ignored="false" />
+    <file path="/X50XUtils.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370298513750" ignored="false" />
+    <file path="/ConnectListener.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370299833000" ignored="false" />
+    <file path="/ClientSSLTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370302461203" ignored="false" />
+    <file path="/SSLTest.java" changelist="13abfeb1-0624-434d-88bb-a8204a3dd8bf" time="1370304273109" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +76,37 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java" line="673" class="java.security.KeyStore" package="java.security">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java" line="132" class="com.davidrapin.jlap.ssl.SSLContextFactory" package="com.davidrapin.jlap.ssl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -98,7 +141,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -108,23 +150,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="SSLContextFactory.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="132" column="0" selection-start="4899" selection-end="4899" vertical-scroll-proportion="0.42481202">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#992#1010#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PEMWriter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-sources.jar!/org/bouncycastle/openssl/PEMWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="11" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="HttpProxyHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="46" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2497#3811#0" expanded="true" />
-                <element signature="e#3788#3789#0" expanded="true" />
-              </folding>
+            <state line="104" column="12" selection-start="4512" selection-end="4512" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetLoc.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/NetLoc.java">
+      <file leaf-file-name="SSLTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/SSLTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.0">
+            <state line="16" column="34" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,95 +191,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClient.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClient.java">
+      <file leaf-file-name="SSLUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="4" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.8200409">
+            <state line="225" column="39" selection-start="8377" selection-end="8377" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyStore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="934" column="22" selection-start="30629" selection-end="30629" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyStoreSpi.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStoreSpi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="176" column="0" selection-start="6413" selection-end="6413" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDKPKCS12KeyStore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-sources.jar!/org/bouncycastle/jce/provider/JDKPKCS12KeyStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="475" column="16" selection-start="13525" selection-end="13525" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientSSLTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientSSLTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="16" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1007#1029#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientPool.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="38" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#571#595#0" expanded="true" />
-                <element signature="e#930#950#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/util/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="6" selection-start="8656" selection-end="8656" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseForwarder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/ResponseForwarder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SslHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/ssl/SslHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="656" column="18" selection-start="24142" selection-end="24142" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#41993#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#7176#7192#0" expanded="false" />
-                <element signature="e#11656#12103#0" expanded="false" />
-                <element signature="e#12088#12089#0" expanded="false" />
-                <element signature="e#12246#12858#0" expanded="false" />
-                <element signature="e#12847#12848#0" expanded="false" />
-                <element signature="e#13309#13774#0" expanded="false" />
-                <element signature="e#13763#13764#0" expanded="false" />
-                <element signature="e#38747#39103#0" expanded="false" />
-                <element signature="e#39088#39089#0" expanded="false" />
-                <element signature="e#39634#39975#0" expanded="false" />
-                <element signature="e#39960#39961#0" expanded="false" />
-                <element signature="e#40186#40577#0" expanded="false" />
-                <element signature="e#40566#40567#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpClientChannelInitializer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="68" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpProxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpProxyChannelInitializer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyChannelInitializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="41" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -235,22 +248,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/SSLCertificate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ssl/SSLUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/PKCS.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/PKCS1EncodedKeySpec.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/TrustManagerFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/Host.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/NetLoc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/sing/modules/CertificateRenewModule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/sing/util/CertificateUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/sing/modules/NewCaModule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/sing/modules/NewCertificateRequestModule.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/X509DirName.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/X500String.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/X500NameUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/X50XUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ConnectListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClient.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientPoolTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientSSLTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/SSLTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLUtils.java" />
       </list>
     </option>
   </component>
@@ -290,9 +303,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="469" />
-    <option name="y" value="-15" />
-    <option name="width" value="1206" />
+    <option name="x" value="486" />
+    <option name="y" value="-6" />
+    <option name="width" value="1187" />
     <option name="height" value="1037" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -340,38 +353,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fr.ina.dlweb.jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -447,6 +428,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="securechat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: bouncycastle:bcprov-jdk16:136" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcprov-jdk16-136.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -556,11 +555,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssl" />
+              <option name="myItemId" value="sing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,43 +580,37 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="proxy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jlap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="fr.ina.dlweb.jlap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -637,7 +626,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LittleProxy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pure-java-ca-generator/JavaCertServices/.project" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -664,7 +653,7 @@
       <recent name="com.davidrapin" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SSLUtils">
+  <component name="RunManager" selected="TestNG.ProxyTest">
     <configuration default="false" name="ProxyTest" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -704,7 +693,7 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="false" name="ClientPoolTest.test" type="TestNG" factoryName="TestNG" temporary="true">
+    <configuration default="false" name="ClientPoolTest.test2" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.davidrapin.jlap.*" />
@@ -717,6 +706,45 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
       <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ClientPoolTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2553" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ClientSSLTest.test" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.davidrapin.jlap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="jlap" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ClientSSLTest" />
       <option name="METHOD_NAME" value="test" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -736,14 +764,14 @@
       <properties />
       <listeners />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4477" />
+        <option name="DEBUG_PORT" value="4694" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="false" name="ClientPoolTest" type="TestNG" factoryName="TestNG" temporary="true">
+    <configuration default="false" name="SSLTest.test" type="TestNG" factoryName="TestNG" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.davidrapin.jlap.*" />
@@ -755,7 +783,46 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
-      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ClientPoolTest" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.SSLTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1100" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SSLTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.davidrapin.jlap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="jlap" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.davidrapin.jlap" />
+      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.SSLTest" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -775,61 +842,11 @@
       <properties />
       <listeners />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1268" />
+        <option name="DEBUG_PORT" value="1957" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="LICENSE" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.bouncycastle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.bouncycastle.LICENSE" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="SSLUtils" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.davidrapin.jlap.ssl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.davidrapin.jlap.ssl.SSLUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="jlap" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -838,6 +855,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -866,19 +896,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -919,18 +936,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.ProxyTest" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.ClientPoolTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.LICENSE" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SSLUtils" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test2" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.ClientSSLTest.test" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.SSLTest.test" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.SSLTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="TestNG.ProxyTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SSLUtils" />
-        <item index="2" class="java.lang.String" itemvalue="Application.LICENSE" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.ClientPoolTest" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.SSLTest" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.SSLTest.test" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.ClientSSLTest.test" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.ClientPoolTest.test2" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -939,6 +956,25 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">C:\Documents and Settings\dave\Application Data\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="13abfeb1-0624-434d-88bb-a8204a3dd8bf" name="Default" comment="" />
@@ -948,28 +984,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="469" y="-15" width="1206" height="1037" extended-state="0" />
-    <editor active="true" />
+    <frame x="486" y="-6" width="1187" height="1037" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2833698" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28118163" sideWeight="0.9982993" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35339168" sideWeight="0.99889624" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3522976" sideWeight="0.99889624" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26240352" sideWeight="0.14137086" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32745314" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713348" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22073579" sideWeight="0.6466083" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35416666" sideWeight="0.6466083" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2894969" sideWeight="0.6477024" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33186328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33277592" sideWeight="0.6466083" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1034,126 +1071,72 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/codec/http/DefaultHttpResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientPoolTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.0">
+        <state line="53" column="52" selection-start="1986" selection-end="1986" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/securechat/SecureChatSslContextFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="19" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-example/4.0.0.CR1/netty-example-4.0.0.CR1-sources.jar!/io/netty/example/securechat/SecureChatServerInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="39" selection-start="1852" selection-end="1988" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/channel/ChannelHandlerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2174" selection-end="2174" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#11853#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2003#2033#1" expanded="false" />
-            <element signature="e#3800#3830#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1181" column="22" selection-start="39263" selection-end="39263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="26" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClientChannelInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="68" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/ResponseForwarder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="618" selection-end="618" vertical-scroll-proportion="0.0">
+        <state line="21" column="13" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyChannelInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.0.CR1/netty-all-4.0.0.CR1-sources.jar!/io/netty/handler/ssl/SslHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="656" column="18" selection-start="24142" selection-end="24142" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#41993#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#7176#7192#0" expanded="false" />
-            <element signature="e#11656#12103#0" expanded="false" />
-            <element signature="e#12088#12089#0" expanded="false" />
-            <element signature="e#12246#12858#0" expanded="false" />
-            <element signature="e#12847#12848#0" expanded="false" />
-            <element signature="e#13309#13774#0" expanded="false" />
-            <element signature="e#13763#13764#0" expanded="false" />
-            <element signature="e#38747#39103#0" expanded="false" />
-            <element signature="e#39088#39089#0" expanded="false" />
-            <element signature="e#39634#39975#0" expanded="false" />
-            <element signature="e#39960#39961#0" expanded="false" />
-            <element signature="e#40186#40577#0" expanded="false" />
-            <element signature="e#40566#40567#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="6" selection-start="8656" selection-end="8656" vertical-scroll-proportion="0.0">
+        <state line="15" column="13" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/ClientPool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="38" selection-start="3420" selection-end="3420" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#571#595#0" expanded="true" />
-            <element signature="e#930#950#0" expanded="true" />
-          </folding>
+        <state line="79" column="0" selection-start="2535" selection-end="2535" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/NetLoc.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/sing/main/CAUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.0">
+        <state line="49" column="65" selection-start="1405" selection-end="1462" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/jre/lib/rt.jar!/sun/security/provider/KeyProtector.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-sources.jar!/org/bouncycastle/jce/provider/JDKPKCS12KeyStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="475" column="16" selection-start="13525" selection-end="13525" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStoreSpi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="0" selection-start="6413" selection-end="6413" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_12/src.zip!/java/security/KeyStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="934" column="22" selection-start="30629" selection-end="30629" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/ClientSSLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="16" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1162,20 +1145,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/proxy/HttpProxyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="46" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.0">
+        <state line="104" column="12" selection-start="4512" selection-end="4512" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/bouncycastle/bcprov-jdk16/136/bcprov-jdk16-136-sources.jar!/org/bouncycastle/openssl/PEMWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="11" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/davidrapin/jlap/SSLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="34" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2497#3811#0" expanded="true" />
-            <element signature="e#3788#3789#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/client/HttpClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="4" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.8200409">
+        <state line="225" column="39" selection-start="8377" selection-end="8377" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/davidrapin/jlap/ssl/SSLContextFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="0" selection-start="4899" selection-end="4899" vertical-scroll-proportion="0.42481202">
           <folding>
-            <element signature="e#1007#1029#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#992#1010#0" expanded="true" />
           </folding>
         </state>
       </provider>
