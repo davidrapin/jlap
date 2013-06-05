@@ -1,3 +1,9 @@
+# IntelliJ IDEA
+*.iws
+*.ipr
+*.iml
+.idea
+
 #################
 ## Eclipse
 #################
