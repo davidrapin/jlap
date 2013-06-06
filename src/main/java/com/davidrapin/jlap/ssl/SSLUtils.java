@@ -1,9 +1,9 @@
 package com.davidrapin.jlap.ssl;
 
-import es.sing.util.KeyGenerator;
 import org.bouncycastle.asn1.*;
 import org.bouncycastle.asn1.pkcs.PKCSObjectIdentifiers;
 import org.bouncycastle.asn1.x509.*;
+import org.bouncycastle.asn1.x509.X509Extension;
 import org.bouncycastle.jce.PKCS10CertificationRequest;
 import org.bouncycastle.jce.X509Principal;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -15,10 +15,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.*;
-import java.security.cert.CertificateEncodingException;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateParsingException;
-import java.security.cert.X509Certificate;
+import java.security.cert.*;
 import java.util.Date;
 import java.util.Enumeration;
 
@@ -44,11 +41,12 @@ public class SSLUtils
      * @param caKeySize        the key size in bytes (1024 would be good)
      * @param validityMonths   the number of month this certificate will be valid, starting now
      * @return a KeyStore containing the generated certificate with its private key.
-     * @throws Exception
      */
     public static KeyStore createCaKeyStore(
         String xName, String keyPairAlgorithm, String signAlgorithm, int caKeySize, int validityMonths
-    ) throws Exception
+    )
+        throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, InvalidKeyException,
+               NoSuchProviderException, SignatureException
     {
         // generate keyPair
         KeyPair caKeyPair = KeyGenerator.generaKeyPair(caKeySize, keyPairAlgorithm);
@@ -84,8 +82,10 @@ public class SSLUtils
 
 
     public static X509Certificate createCA(
-        PublicKey publicKey, PrivateKey privateKey, String xName, int durationMonths, String signAlgorithm
-    ) throws Exception
+        PublicKey publicKey, PrivateKey privateKey, String xName, int durationDays, String signAlgorithm
+    )
+        throws CertificateException, NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+               NoSuchProviderException
     {
         X509Principal authorityDN = new X509Principal(xName);
 
@@ -97,10 +97,10 @@ public class SSLUtils
         certGen.setSerialNumber(BigInteger.valueOf(1));
         certGen.setIssuerDN(authorityDN);
 
-        // set the validity interval (start now)
-        certGen.setNotBefore(new Date(System.currentTimeMillis()));
+        // set the validity interval (starts 10 seconds ago, end in durationDays days)
+        certGen.setNotBefore(new Date(System.currentTimeMillis() - 10000L));
         certGen.setNotAfter(new Date(
-            System.currentTimeMillis() + durationMonths * (1000L * 60 * 60 * 24 * 30)
+            System.currentTimeMillis() + durationDays * (1000L * 60 * 60 * 24)
         ));
 
         certGen.setSubjectDN(authorityDN);
@@ -211,7 +211,8 @@ public class SSLUtils
      * @throws CertificateEncodingException
      */
     public static X509Certificate[] signCertificationRequest(
-        PKCS10CertificationRequest request, X509Certificate caCertificate, PrivateKey caPrivateKey
+        PKCS10CertificationRequest request, int durationDays, String signAlgorithm,
+        X509Certificate caCertificate, PrivateKey caPrivateKey
     ) throws NoSuchAlgorithmException, InvalidKeyException, NoSuchProviderException,
              CertificateParsingException, SignatureException, CertificateEncodingException
     {
@@ -220,10 +221,12 @@ public class SSLUtils
         certGen.setSerialNumber(BigInteger.valueOf(System.currentTimeMillis()));
         certGen.setIssuerDN(caCertificate.getSubjectX500Principal());
         certGen.setNotBefore(new Date(System.currentTimeMillis() - 10000));
-        certGen.setNotAfter(new Date(System.currentTimeMillis() + 10000));
+        certGen.setNotAfter(new Date(
+            System.currentTimeMillis() + durationDays * (1000L * 60 * 60 * 24)
+        ));
         certGen.setSubjectDN(request.getCertificationRequestInfo().getSubject());
         certGen.setPublicKey(request.getPublicKey());
-        certGen.setSignatureAlgorithm("SHA256WithRSAEncryption");
+        certGen.setSignatureAlgorithm(signAlgorithm); // "SHA256WithRSAEncryption"
 
         certGen.addExtension(
             X509Extensions.AuthorityKeyIdentifier,
@@ -278,163 +281,20 @@ public class SSLUtils
         return new X509Certificate[]{issuedCert, caCertificate};
     }
 
-    public static X509Certificate[] signCertificationRequest(PKCS10CertificationRequest request, KeyStore caKeyStore, String caKeyStorePassword)
+    public static X509Certificate[] signCertificationRequest(
+        PKCS10CertificationRequest request, int durationDays, String signAlgorithm,
+        KeyStore caKeyStore, char[] caKeyStorePassword
+    )
         throws UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException, CertificateEncodingException,
                SignatureException, NoSuchProviderException, InvalidKeyException, CertificateParsingException
     {
         return signCertificationRequest(
-            request,
-            (X509Certificate) caKeyStore.getCertificate("CApriv"),
-            (PrivateKey) caKeyStore.getKey("CApriv", caKeyStorePassword.toCharArray())
+            request, durationDays, signAlgorithm,
+            (X509Certificate) caKeyStore.getCertificate("CApriv"), // should be "CA" ??
+            (PrivateKey) caKeyStore.getKey("CApriv", caKeyStorePassword)
         );
     }
 
-
-    /*
-    public static void testKeyPair(KeyPair keyPair) throws Exception
-     {
-         Security.addProvider(new BouncyCastleProvider());
-
-         String message = "hello world";
-         //File privateKey = new File("private.pem");
-         //KeyPair keyPair = readKeyPair(privateKey, "password".toCharArray());
-
-         // encode with private key
-         Signature signature = Signature.getInstance("SHA256WithRSAEncryption");
-         signature.initSign(keyPair.getPrivate());
-         signature.update(message.getBytes());
-         byte[] signatureBytes = signature.sign();
-         System.out.println(new String(Hex.encode(signatureBytes)));
-
-         // decode with public key
-         Signature verifier = Signature.getInstance("SHA256WithRSAEncryption");
-         verifier.initVerify(keyPair.getPublic());
-         verifier.update(message.getBytes());
-         if (verifier.verify(signatureBytes))
-         {
-             System.out.println("Signature is valid");
-         }
-         else
-         {
-             System.out.println("Signature is invalid");
-         }
-     }
-    */
-
-    /*
-    private static final class DefaultPasswordFinder implements PasswordFinder
-    {
-        private String password;
-
-        private DefaultPasswordFinder(String password)
-        {
-            this.password = password;
-        }
-
-        @Override
-        public char[] getPassword()
-        {
-            return password.toCharArray();
-        }
-    }
-
-
-    public static KeyPair getKeyPair(InputStream publicKeyPem, InputStream privateKeyPem, final String password) throws IOException
-    {
-        Security.addProvider(new BouncyCastleProvider());
-        //, new DefaultPasswordFinder(password)
-        PEMReader r = new PEMReader(new InputStreamReader(publicKeyPem));
-        Object keyPair = r.readObject();
-        System.out.println(">" + keyPair);
-        return (KeyPair) keyPair;
-    }
-    public static void main(String[] args) throws IOException
-    {
-        //PKCS8EncodedKeySpec s = new PKCS8EncodedKeySpec();
-
-
-        getKeyPair(
-            SSLUtils.class.getResourceAsStream("ca_certificate.pem"),
-            SSLUtils.class.getResourceAsStream("ca_private.pem"),
-            "jlap"
-        );
-    }
-    */
-
-    /*
-
-    private KeyPair readPrivateKey(InputStream privateKeyPem) throws IOException
-    {
-        byte[] keyBytes = readKeyBytes(privateKeyPem);
-        keyBytes = PEMUtilities.crypt(false, provider, keyBytes, password, dekAlgName, iv);
-
-
-
-            KeySpec pubSpec, privSpec;
-            ByteArrayInputStream bIn = new ByteArrayInputStream(keyBytes);
-            ASN1InputStream aIn = new ASN1InputStream(bIn);
-            ASN1Sequence seq = (ASN1Sequence)aIn.readObject();
-
-            if (type.equals("RSA"))
-            {
-                DERInteger v = (DERInteger)seq.getObjectAt(0);
-                DERInteger              mod = (DERInteger)seq.getObjectAt(1);
-                DERInteger              pubExp = (DERInteger)seq.getObjectAt(2);
-                DERInteger              privExp = (DERInteger)seq.getObjectAt(3);
-                DERInteger              p1 = (DERInteger)seq.getObjectAt(4);
-                DERInteger              p2 = (DERInteger)seq.getObjectAt(5);
-                DERInteger              exp1 = (DERInteger)seq.getObjectAt(6);
-                DERInteger              exp2 = (DERInteger)seq.getObjectAt(7);
-                DERInteger              crtCoef = (DERInteger)seq.getObjectAt(8);
-
-                pubSpec = new RSAPublicKeySpec(
-                            mod.getValue(), pubExp.getValue());
-                privSpec = new RSAPrivateCrtKeySpec(
-                        mod.getValue(), pubExp.getValue(), privExp.getValue(),
-                        p1.getValue(), p2.getValue(),
-                        exp1.getValue(), exp2.getValue(),
-                        crtCoef.getValue());
-            }
-            else    // "DSA"
-            {
-                DERInteger              v = (DERInteger)seq.getObjectAt(0);
-                DERInteger              p = (DERInteger)seq.getObjectAt(1);
-                DERInteger              q = (DERInteger)seq.getObjectAt(2);
-                DERInteger              g = (DERInteger)seq.getObjectAt(3);
-                DERInteger              y = (DERInteger)seq.getObjectAt(4);
-                DERInteger              x = (DERInteger)seq.getObjectAt(5);
-
-                privSpec = new DSAPrivateKeySpec(
-                            x.getValue(), p.getValue(),
-                                q.getValue(), g.getValue());
-                pubSpec = new DSAPublicKeySpec(
-                            y.getValue(), p.getValue(),
-                                q.getValue(), g.getValue());
-            }
-
-            KeyFactory          fact = KeyFactory.getInstance(type, provider);
-
-            return new KeyPair(
-                        fact.generatePublic(pubSpec),
-                        fact.generatePrivate(privSpec));
-    }
-    */
-
-    /*
-    private byte[] readKeyBytes(InputStream input) throws IOException
-    {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-
-        StringBuilder key = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null)
-        {
-            if (line.startsWith("-----")) continue;
-            key.append(line.trim());
-        }
-        return Base64.decode(key.toString());
-    }
-*/
 
 //
 //    /**

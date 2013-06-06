@@ -12,14 +12,13 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundMessageHandlerAdapter;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.ssl.SslHandler;
-import io.netty.util.CharsetUtil;
 
 import javax.net.ssl.SSLEngine;
+import java.nio.charset.Charset;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
-import static io.netty.handler.codec.http.HttpHeaders.*;
-import static io.netty.handler.codec.http.HttpResponseStatus.BAD_GATEWAY;
-import static io.netty.handler.codec.http.HttpResponseStatus.CONTINUE;
-import static io.netty.handler.codec.http.HttpResponseStatus.OK;
+import static io.netty.handler.codec.http.HttpHeaders.is100ContinueExpected;
+import static io.netty.handler.codec.http.HttpResponseStatus.*;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 /**
@@ -31,11 +30,15 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
 {
     //    private static final Charset US_ASCII = Charset.forName("US-ASCII");
     private final ClientPool clientPool;
+    private final SSLContextFactory sslContextFactory;
     private NetLoc targetServer = null;
+    private boolean awaitingConnect = false;
+    private final ConcurrentLinkedQueue<FullHttpRequest> requestsDuringConnect = new ConcurrentLinkedQueue<FullHttpRequest>();
 
-    public HttpProxyHandler(ClientPool clientPool)
+    public HttpProxyHandler(ClientPool clientPool, SSLContextFactory sslContextFactory)
     {
         this.clientPool = clientPool;
+        this.sslContextFactory = sslContextFactory;
     }
 
     @Override
@@ -56,6 +59,10 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
             requestCopy.trailingHeaders().add(request.trailingHeaders());
             requestCopy.headers().add(request.headers());
 
+            if (awaitingConnect) {
+                requestsDuringConnect.add(requestCopy);
+                return;
+            }
 
             if (request.getMethod().equals(HttpMethod.CONNECT))
             {
@@ -67,6 +74,8 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                 );
                 */
                 targetServer = NetLoc.forRequest(request);
+                awaitingConnect = true;
+                requestsDuringConnect.clear();
 
                 // send proxy OK to connect
                 clientPool.connect(targetServer, new ConnectListener()
@@ -74,17 +83,24 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     @Override
                     public void onSuccess(final SSLCertificate serverCertificate)
                     {
-                        requestContext.channel().write(new DefaultFullHttpResponse(requestCopy.getProtocolVersion(), OK)).addListener(
+                        System.out.println("SSL Connect client-side handshake OK");
+
+                        DefaultFullHttpResponse response = new DefaultFullHttpResponse(
+                            requestCopy.getProtocolVersion(),
+                            OK,
+                            Unpooled.copiedBuffer("Connect OK", Charset.forName("US-ASCII"))
+                        );
+                        requestContext.channel().write(response).addListener(
                             new ChannelFutureListener()
                             {
                                 @Override
                                 public void operationComplete(ChannelFuture future) throws Exception
                                 {
                                     // connect OK
-                                    System.out.println("SSL Connect OK");
+                                    System.out.println("SSL Connect proxy-side : notified");
 
                                     // add SSL engine to receive communication
-                                    SSLEngine engine = SSLContextFactory.createServerContext(targetServer, serverCertificate).createSSLEngine();
+                                    SSLEngine engine = sslContextFactory.getServerContext(targetServer, serverCertificate).createSSLEngine();
                                     engine.setUseClientMode(false);
                                     final SslHandler sslhandler = new SslHandler(engine)
                                     {
@@ -98,7 +114,23 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                                     future.channel().pipeline().addFirst("ssl-server", sslhandler);
 
                                     // start handshake
-                                    sslhandler.handshake(future.channel().newPromise());
+                                    System.out.println("SSL connect : starting proxy-side handshake");
+                                    sslhandler.handshake(future.channel().newPromise()).addListener(new ChannelFutureListener()
+                                    {
+                                        @Override
+                                        public void operationComplete(ChannelFuture future) throws Exception
+                                        {
+                                            System.out.println("SSL proxy-side handshake : success?=" + future.isSuccess());
+                                            if(!future.isSuccess()) {
+                                                future.channel().close();
+                                            } else {
+                                                while (!requestsDuringConnect.isEmpty()) {
+                                                    future.channel().write(requestsDuringConnect.remove());
+                                                }
+                                                awaitingConnect = false;
+                                            }
+                                        }
+                                    });
                                 }
                             }
                         );
@@ -107,6 +139,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     @Override
                     public void onFailure()
                     {
+                        System.out.println("SSL Connect client-side handshake FAILED");
                         requestContext.channel()
                             .write(new DefaultFullHttpResponse(requestCopy.getProtocolVersion(), BAD_GATEWAY))
                             .addListener(ChannelFutureListener.CLOSE);
@@ -120,26 +153,26 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
         }
     }
 
-    private static void sendHttpResponse(
-        ChannelHandlerContext requestContext, FullHttpRequest request, FullHttpResponse response
-    )
-    {
-        boolean responseIsError = response.getStatus().code() >= 400;
-
-        // Generate an error page if response getStatus code is not OK (200).
-        if (responseIsError)
-        {
-            response.data().writeBytes(Unpooled.copiedBuffer(response.getStatus().toString(), CharsetUtil.UTF_8));
-            setContentLength(response, response.data().readableBytes());
-        }
-
-        // Send the response and close the connection if necessary.
-        ChannelFuture f = requestContext.channel().write(response);
-        if (!isKeepAlive(request) || responseIsError)
-        {
-            f.addListener(ChannelFutureListener.CLOSE);
-        }
-    }
+//    private static void sendHttpResponse(
+//        ChannelHandlerContext requestContext, FullHttpRequest request, FullHttpResponse response
+//    )
+//    {
+//        boolean responseIsError = response.getStatus().code() >= 400;
+//
+//        // Generate an error page if response getStatus code is not OK (200).
+//        if (responseIsError)
+//        {
+//            response.data().writeBytes(Unpooled.copiedBuffer(response.getStatus().toString(), CharsetUtil.UTF_8));
+//            setContentLength(response, response.data().readableBytes());
+//        }
+//
+//        // Send the response and close the connection if necessary.
+//        ChannelFuture f = requestContext.channel().write(response);
+//        if (!isKeepAlive(request) || responseIsError)
+//        {
+//            f.addListener(ChannelFutureListener.CLOSE);
+//        }
+//    }
 
     private static void send100Continue(ChannelHandlerContext ctx)
     {

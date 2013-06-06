@@ -1,5 +1,6 @@
 package com.davidrapin.jlap.proxy;
 
+import com.davidrapin.jlap.ssl.SSLContextFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -29,6 +30,9 @@ public class HttpProxy
 
         try
         {
+            // ssl context factory
+            SSLContextFactory sslContextFactory = new SSLContextFactory();
+
             // config
             bootstrap
                 .group(new NioEventLoopGroup())
@@ -36,7 +40,7 @@ public class HttpProxy
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 .localAddress("0.0.0.0", port)
-                .childHandler(new HttpProxyChannelInitializer())
+                .childHandler(new HttpProxyChannelInitializer(sslContextFactory))
             ;
 
             // bind

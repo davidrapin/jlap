@@ -2,19 +2,14 @@ package com.davidrapin.jlap.ssl;
 
 import com.davidrapin.jlap.client.HttpClientListener;
 import com.davidrapin.jlap.client.NetLoc;
-import es.sing.util.KeyGenerator;
 import org.bouncycastle.jce.PKCS10CertificationRequest;
 import org.bouncycastle.openssl.PEMWriter;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.security.KeyPair;
-import java.security.KeyStore;
-import java.security.Security;
+import java.io.*;
+import java.security.*;
+import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -27,8 +22,47 @@ import java.util.concurrent.ConcurrentMap;
 public class SSLContextFactory
 {
     private static final String PROTOCOL = "TLS";
-    private static final SSLContext SERVER_CONTEXT = createServerContext_JKS();
-    private static final ConcurrentMap<NetLoc, KeyStore> FAKE_CERTIFICATES = new ConcurrentHashMap<NetLoc, KeyStore>();
+    private static final String SIGN_ALGORITHM = "SHA1withRSA";
+    private static final String KEY_ALGORITHM = "RSA";
+    private final ConcurrentMap<NetLoc, SSLContext> serverContextCache = new ConcurrentHashMap<NetLoc, SSLContext>();
+
+    private final String caName;
+    private final int caKeySize;
+    private final int caDurationDays;
+    private final String caP12Path;
+    private final String caPemPath;
+    private final char[] caKeyStorePassword;
+
+    private final int fakeCertKeySize;
+    private final int fakeCertDurationDays;
+    private final char[] fakeKeyStorePassword;
+
+    // System.currentTimeMillis() + durationDays * (1000L * 60 * 60 * 24)
+
+    public SSLContextFactory(
+        String caName, int caKeySize, int caDurationDays, String caP12Path, String caPemPath, String caKeyStorePassword,
+        int fakeCertKeySize, int fakeCertDurationDays, String fakeKeyStorePassword
+    )
+    {
+        this.caName = caName;
+        this.caKeySize = caKeySize;
+        this.caDurationDays = caDurationDays;
+        this.caP12Path = caP12Path;
+        this.caPemPath = caPemPath;
+        this.caKeyStorePassword = caKeyStorePassword.toCharArray();
+
+        this.fakeCertKeySize = fakeCertKeySize;
+        this.fakeCertDurationDays = fakeCertDurationDays;
+        this.fakeKeyStorePassword = fakeKeyStorePassword.toCharArray();
+    }
+
+    public SSLContextFactory()
+    {
+        this(
+            "CN=ZProxy Authority, O=ZProxy", 1024, 12 * 31, "./ca-cert.p12", "./ca-cert.pem", "hihahou",
+            1024, 12 * 31, "fakeKeyStorePass"
+        );
+    }
 
     public static SSLContext getClientContext(HttpClientListener listener)
     {
@@ -45,100 +79,106 @@ public class SSLContextFactory
         }
     }
 
-    public static SSLContext getServerContext() throws Exception
+    public SSLContext getServerContext(NetLoc server, SSLCertificate realServerCertificate)
     {
-        return SERVER_CONTEXT;
+        // fix x500 name
+        String x500Name = realServerCertificate.chain[0].getSubjectX500Principal().toString();
+        x500Name = x500Name.replaceAll("CN=[^,]+", "CN=" + server.host);
+
+        return getServerContext(server, x500Name);
     }
 
-
-    private static SSLContext createServerContext_JKS()
-    {
-        // SunX509
-        String algorithm = Security.getProperty("ssl.KeyManagerFactory.algorithm");
-        if (algorithm == null) algorithm = "SunX509";
-
-        SSLContext serverContext;
-        try
-        {
-            KeyStore ks = KeyStore.getInstance("JKS");
-            ks.load(SSLContextFactory.class.getResourceAsStream("jlap.jks"), "jlap!!".toCharArray());
-
-
-            // Set up key manager factory to use our key store
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance(algorithm);
-            kmf.init(ks, "jlap!!".toCharArray());
-
-            // Initialize the SSLContext to work with our key managers.
-            serverContext = SSLContext.getInstance(PROTOCOL);
-            serverContext.init(kmf.getKeyManagers(), null, null);
-            return serverContext;
-        }
-        catch (Exception e)
-        {
-            throw new Error("Failed to initialize the server-side SSLContext", e);
-        }
-    }
-
-    public static SSLContext createServerContext(NetLoc server, SSLCertificate serverCertificate)
-    {
-        return createServerContext(
-            server,
-            serverCertificate.chain[0].getSubjectX500Principal().toString()
-        );
-    }
-
-    public static SSLContext createServerContext(NetLoc server, String certificateName)
+    public SSLContext getServerContext(NetLoc server, String realX500Name)
     {
         try
         {
-            String p12Path = "./ca-cert.p12";
-            String pemPath = "./ca-cert.pem";
-            File p12File = new File(p12Path);
-            String caKeyStorePassword = "hihahou";
-            String defaultKeyStorePassword = "lulz";
-
-            KeyStore caKeyStore;
-            if (!p12File.exists())
-            {
-                // create new CA
-                caKeyStore = SSLUtils.createCaKeyStore("CN=zzz.com, O=ZZZ, ST=FR", "RSA", "SHA1withRSA", 1024, 12);
-                FileOutputStream out = new FileOutputStream(p12File);
-                caKeyStore.store(out, caKeyStorePassword.toCharArray());
-                out.close();
-
-                PEMWriter pw = new PEMWriter(new FileWriter(pemPath));
-                pw.writeObject(caKeyStore.getCertificate("CA"));
-                pw.close();
-            }
-            else
-            {
-                // load key store
-                caKeyStore = KeyStore.getInstance("PKCS12");
-                caKeyStore.load(new FileInputStream(p12File), caKeyStorePassword.toCharArray());
-            }
-
-            KeyStore fakeCertKeyStore = FAKE_CERTIFICATES.get(server);
-            if (fakeCertKeyStore == null)
-            {
-                KeyPair keyPair = KeyGenerator.generaKeyPair(1024, "RSA");
-                PKCS10CertificationRequest certificationRequest = SSLUtils.createCertificationRequest(certificateName, "SHA1withRSA", keyPair);
-                X509Certificate[] certificates = SSLUtils.signCertificationRequest(certificationRequest, caKeyStore, caKeyStorePassword);
-                fakeCertKeyStore = KeyStore.getInstance("JKS");
-                fakeCertKeyStore.load(null, null);
-                fakeCertKeyStore.setKeyEntry("key1", keyPair.getPrivate(), defaultKeyStorePassword.toCharArray(), certificates);
-                FAKE_CERTIFICATES.put(server, fakeCertKeyStore);
-            }
-
-            // Initialize the SSLContext to work with our key managers.
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
-            kmf.init(fakeCertKeyStore, defaultKeyStorePassword.toCharArray());
-            SSLContext serverContext = SSLContext.getInstance(PROTOCOL);
-            serverContext.init(kmf.getKeyManagers(), null, null);
-            return serverContext;
+            return getServerContext0(server, realX500Name);
         }
         catch (Exception e)
         {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     *
+     * @param server   the server that this certificate is generated for
+     * @param x500Name the X500 name of the real server certificate
+     * @return a JKS KeyStore containing a fake certificate for this server, signed by our CA.
+     */
+    private SSLContext getServerContext0(NetLoc server, String x500Name)
+        throws IOException, CertificateException, NoSuchAlgorithmException, UnrecoverableKeyException,
+               InvalidKeyException, SignatureException, NoSuchProviderException, KeyStoreException,
+               KeyManagementException
+    {
+        SSLContext serverContext = serverContextCache.get(server);
+        if (serverContext == null) serverContext = createServerContext(server, x500Name);
+        return serverContext;
+    }
+
+    public synchronized SSLContext createServerContext(NetLoc server, String x500name)
+        throws CertificateException, NoSuchAlgorithmException, KeyStoreException, SignatureException,
+               NoSuchProviderException, InvalidKeyException, IOException, UnrecoverableKeyException,
+               KeyManagementException
+    {
+        System.out.println("> generating fake cert for '" + x500name + "'");
+
+        // get or create a Certificate Authority
+        KeyStore caKeyStore = getCaKeyStore();
+
+        // generate fake certificate
+        KeyPair fakeCertKeyPair = KeyGenerator.generaKeyPair(fakeCertKeySize, KEY_ALGORITHM);
+        PKCS10CertificationRequest request = SSLUtils.createCertificationRequest(
+            x500name, SIGN_ALGORITHM, fakeCertKeyPair
+        );
+        X509Certificate[] fakeCertChain = SSLUtils.signCertificationRequest(
+            request, fakeCertDurationDays, SIGN_ALGORITHM, caKeyStore, caKeyStorePassword
+        );
+
+        // store fake certificate in a JKS keyStore
+        KeyStore fakeCertKeyStore = KeyStore.getInstance("JKS");
+        fakeCertKeyStore.load(null, null);
+        fakeCertKeyStore.setKeyEntry("key1", fakeCertKeyPair.getPrivate(), fakeKeyStorePassword, fakeCertChain);
+
+        // create a SSL context that uses this keyStore
+        KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance("SunX509");
+        keyManagerFactory.init(fakeCertKeyStore, fakeKeyStorePassword);
+        SSLContext serverContext = SSLContext.getInstance(PROTOCOL);
+        serverContext.init(keyManagerFactory.getKeyManagers(), null, null);
+
+        // cache the SSL context
+        serverContextCache.put(server, serverContext);
+
+        return serverContext;
+    }
+
+    private KeyStore getCaKeyStore()
+        throws CertificateException, NoSuchAlgorithmException, KeyStoreException, SignatureException,
+               NoSuchProviderException, InvalidKeyException, IOException
+    {
+        File p12File = new File(caP12Path);
+        KeyStore caKeyStore;
+        if (!p12File.exists())
+        {
+            // create new CA
+            caKeyStore = SSLUtils.createCaKeyStore(caName, KEY_ALGORITHM, SIGN_ALGORITHM, caKeySize, caDurationDays);
+
+            // save the CA certificate
+            FileOutputStream out = new FileOutputStream(p12File);
+            caKeyStore.store(out, caKeyStorePassword);
+            out.close();
+
+            // save the newly created CA KeyStore to
+            PEMWriter pw = new PEMWriter(new FileWriter(caPemPath));
+            pw.writeObject(caKeyStore.getCertificate("CA"));
+            pw.close();
+        }
+        else
+        {
+            // load key store
+            caKeyStore = KeyStore.getInstance("PKCS12");
+            caKeyStore.load(new FileInputStream(p12File), caKeyStorePassword);
+        }
+        return caKeyStore;
     }
 }

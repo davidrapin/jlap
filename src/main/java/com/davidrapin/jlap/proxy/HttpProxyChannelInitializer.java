@@ -1,6 +1,7 @@
 package com.davidrapin.jlap.proxy;
 
 import com.davidrapin.jlap.client.ClientPool;
+import com.davidrapin.jlap.ssl.SSLContextFactory;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -16,6 +17,12 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
 public class HttpProxyChannelInitializer extends ChannelInitializer<SocketChannel>
 {
     private ClientPool clientPool;
+    private final SSLContextFactory sslContextFactory;
+
+    public HttpProxyChannelInitializer(SSLContextFactory sslContextFactory)
+    {
+        this.sslContextFactory = sslContextFactory;
+    }
 
     @Override
     public void initChannel(SocketChannel ch) throws Exception
@@ -33,7 +40,7 @@ public class HttpProxyChannelInitializer extends ChannelInitializer<SocketChanne
         // if you don't want to handle HttpChunks.
         p.addLast("http-aggregator", new HttpObjectAggregator(1024 * 1024));
 
-        p.addLast("http-proxy", new HttpProxyHandler(clientPool));
+        p.addLast("http-proxy", new HttpProxyHandler(clientPool, sslContextFactory));
 
         //p.addLast("zipper", new HttpContentCompressor());
 

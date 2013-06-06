@@ -11,6 +11,7 @@ import java.security.cert.X509Certificate;
  */
 public class DummyTrustManager implements X509TrustManager
 {
+    // http://stackoverflow.com/questions/14694701/java-netty-ssl-server-client-with-self-signed-certificates-throws-fatal-error
     @Override
     public X509Certificate[] getAcceptedIssuers()
     {

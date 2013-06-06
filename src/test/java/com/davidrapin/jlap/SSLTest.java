@@ -12,9 +12,10 @@ import org.testng.annotations.Test;
 public class SSLTest
 {
     @Test
-    public void test()
+    public void test() throws Exception
     {
-        SSLContextFactory.createServerContext(
+        SSLContextFactory f = new SSLContextFactory();
+        f.createServerContext(
             new NetLoc("www.google.fr", 443, true),
             "CN=google.com, O=Google Inc, ST=California, C=US"
         );
