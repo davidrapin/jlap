@@ -3,6 +3,7 @@
 *.ipr
 *.iml
 .idea
+target/
 
 #################
 ## Eclipse
