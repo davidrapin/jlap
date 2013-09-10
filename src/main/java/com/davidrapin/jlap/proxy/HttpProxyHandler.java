@@ -50,6 +50,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
         }
         else
         {
+            // copy the request of the client to make our own
             final FullHttpRequest requestCopy = new DefaultFullHttpRequest(
                 request.getProtocolVersion(),
                 request.getMethod(),
@@ -59,25 +60,23 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
             requestCopy.trailingHeaders().add(request.trailingHeaders());
             requestCopy.headers().add(request.headers());
 
+            // ongoing https connect, store requests somewhere for replay (todo: test this)
             if (awaitingConnect) {
                 requestsDuringConnect.add(requestCopy);
                 return;
             }
 
+            // https initialization
             if (request.getMethod().equals(HttpMethod.CONNECT))
             {
-                /*
-                sendHttpResponse(
-                    requestContext,
-                    request,
-                    new DefaultFullHttpResponse(request.getProtocolVersion(), BAD_GATEWAY)
-                );
-                */
                 targetServer = NetLoc.forRequest(request);
                 awaitingConnect = true;
+                if (requestsDuringConnect.size() > 0) {
+                    System.out.println("> non empty request buffer (requests-during-connect)");
+                }
                 requestsDuringConnect.clear();
 
-                // send proxy OK to connect
+                // oen connection to remote:server
                 clientPool.connect(targetServer, new ConnectListener()
                 {
                     @Override
@@ -85,6 +84,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     {
                         System.out.println("SSL Connect client-side handshake OK");
 
+                        // remote:server success, response 200:ok to remote:client
                         DefaultFullHttpResponse response = new DefaultFullHttpResponse(
                             requestCopy.getProtocolVersion(),
                             OK,
@@ -96,10 +96,10 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                                 @Override
                                 public void operationComplete(ChannelFuture future) throws Exception
                                 {
-                                    // connect OK
+                                    // 200:ok to remote:client sent successfully
                                     System.out.println("SSL Connect proxy-side : notified");
 
-                                    // add SSL engine to receive communication
+                                    // add SSL engine between us and remote:client
                                     SSLEngine engine = sslContextFactory.getServerContext(targetServer, serverCertificate).createSSLEngine();
                                     engine.setUseClientMode(false);
                                     final SslHandler sslhandler = new SslHandler(engine)
@@ -113,7 +113,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                                     };
                                     future.channel().pipeline().addFirst("ssl-server", sslhandler);
 
-                                    // start handshake
+                                    // start handshake with remote:client
                                     System.out.println("SSL connect : starting proxy-side handshake");
                                     sslhandler.handshake(future.channel().newPromise()).addListener(new ChannelFutureListener()
                                     {
@@ -148,31 +148,11 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
             }
             else
             {
+                // classic http request
                 clientPool.sendRequest(targetServer, requestCopy, new ResponseForwarder(requestContext, requestCopy));
             }
         }
     }
-
-//    private static void sendHttpResponse(
-//        ChannelHandlerContext requestContext, FullHttpRequest request, FullHttpResponse response
-//    )
-//    {
-//        boolean responseIsError = response.getStatus().code() >= 400;
-//
-//        // Generate an error page if response getStatus code is not OK (200).
-//        if (responseIsError)
-//        {
-//            response.data().writeBytes(Unpooled.copiedBuffer(response.getStatus().toString(), CharsetUtil.UTF_8));
-//            setContentLength(response, response.data().readableBytes());
-//        }
-//
-//        // Send the response and close the connection if necessary.
-//        ChannelFuture f = requestContext.channel().write(response);
-//        if (!isKeepAlive(request) || responseIsError)
-//        {
-//            f.addListener(ChannelFutureListener.CLOSE);
-//        }
-//    }
 
     private static void send100Continue(ChannelHandlerContext ctx)
     {
@@ -180,19 +160,13 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
         ctx.write(response);
     }
 
-//    private static void sendBadGatewayAndClose(HttpVersion version, ChannelHandlerContext ctx)
-//    {
-//        HttpResponse response = new DefaultFullHttpResponse(version, BAD_GATEWAY);
-//        ctx.write(response).addListener(new ChannelFutureListener()
-//        {
-//            @Override
-//            public void operationComplete(ChannelFuture future) throws Exception
-//            {
-//                future.channel().flush().addListener(CLOSE);
-//            }
-//        });
-//    }
-
+                    /*
+                sendHttpResponse(
+                    requestContext,
+                    request,
+                    new DefaultFullHttpResponse(request.getProtocolVersion(), BAD_GATEWAY)
+                );
+                */
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception

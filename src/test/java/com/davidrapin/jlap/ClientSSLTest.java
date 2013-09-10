@@ -36,7 +36,8 @@ public class ClientSSLTest
 
 
         System.out.println("end :)");
-        Thread.sleep(500000);
+        Thread.sleep(20*1000);
+        p.shutdown();
         System.out.println("true end :))");
     }
 }

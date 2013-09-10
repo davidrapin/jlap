@@ -121,4 +121,12 @@ public class ClientPool
     {
         getClient(targetServer, listener);
     }
+
+    public void shutdown()
+    {
+        for (HttpClient c : connectedClients.values())
+        {
+            c.shutdown();
+        }
+    }
 }

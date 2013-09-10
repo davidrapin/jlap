@@ -165,7 +165,12 @@ public class HttpClient implements HttpResponseListener
     @Override
     public final void onHttpResponse(HttpResponse response, ChannelHandlerContext ctx)
     {
-        responseListeners.peek().onHttpResponse(response, ctx);
+        HttpResponseListener hrl = responseListeners.peek();
+        if (hrl == null) {
+            System.out.println("> response with no request (" + response + ")");
+            return;
+        }
+        hrl.onHttpResponse(response, ctx);
     }
 
     @Override
@@ -197,5 +202,10 @@ public class HttpClient implements HttpResponseListener
     public int countResponseListeners()
     {
         return responseListeners.size();
+    }
+
+    public void shutdown()
+    {
+        futureConnectedChannel.channel().disconnect();
     }
 }

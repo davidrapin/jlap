@@ -40,7 +40,9 @@ public class ClientPoolTest
         p1.sendRequest(r2, new ResponseListener("r2"));
         p2.sendRequest(r4, new ResponseListener("r4"));
 
-        Thread.sleep(500000);
+        Thread.sleep(20*1000);
+        p1.shutdown();
+        p2.shutdown();
     }
 
     public void test2() throws InterruptedException
@@ -54,7 +56,8 @@ public class ClientPoolTest
         p.sendRequest(r1, new ResponseListener("r1"));
 
         System.out.println("end :)");
-        Thread.sleep(500000);
+        Thread.sleep(20*1000);
+        p.shutdown();
         System.out.println("true end :))");
     }
 

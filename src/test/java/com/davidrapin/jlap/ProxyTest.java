@@ -9,11 +9,9 @@ import org.testng.annotations.Test;
  *
  * @author drapin
  */
-@Test
 public class ProxyTest
 {
-    public void test() throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         HttpProxy httpProxy = new HttpProxy(8080);
         httpProxy.run();
     }
