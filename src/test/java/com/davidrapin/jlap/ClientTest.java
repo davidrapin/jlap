@@ -7,6 +7,8 @@ import io.netty.handler.codec.http.DefaultFullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -21,6 +23,8 @@ import java.security.cert.X509Certificate;
 @Test
 public class ClientTest
 {
+    private static final Logger log = LoggerFactory.getLogger(ClientTest.class);
+
     public void test() throws URISyntaxException, MalformedURLException
     {
         HttpRequest r1 = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "/adsl/index.html");
@@ -36,7 +40,7 @@ public class ClientTest
             @Override
             public void onServerCertificate(X509Certificate[] chain, String authType)
             {
-                System.out.println("CERTIFICATE>" + (chain != null && chain.length > 0 ? chain[0] : "none"));
+                log.debug("CERTIFICATE>" + (chain != null && chain.length > 0 ? chain[0] : "none"));
             }
 
             @Override
@@ -63,7 +67,7 @@ public class ClientTest
         c.request(r1, new ResponseListener("r1"));
         c.request(r2, new ResponseListener("r2"));
         c.waitForClose();
-        System.out.println("done :)");
+        log.debug("done :)");
     }
 
 

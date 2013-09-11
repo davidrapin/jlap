@@ -4,6 +4,8 @@ import com.davidrapin.jlap.client.HttpClientListener;
 import com.davidrapin.jlap.client.NetLoc;
 import org.bouncycastle.jce.PKCS10CertificationRequest;
 import org.bouncycastle.openssl.PEMWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -21,6 +23,8 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class SSLContextFactory
 {
+    private static final Logger log = LoggerFactory.getLogger(SSLContextFactory.class);
+
     private static final String PROTOCOL = "TLS";
     private static final String SIGN_ALGORITHM = "SHA1withRSA";
     private static final String KEY_ALGORITHM = "RSA";
@@ -121,7 +125,7 @@ public class SSLContextFactory
                NoSuchProviderException, InvalidKeyException, IOException, UnrecoverableKeyException,
                KeyManagementException
     {
-        System.out.println("> generating fake cert for '" + x500name + "'");
+        log.info("generating fake cert for '{}'", x500name);
 
         // get or create a Certificate Authority
         KeyStore caKeyStore = getCaKeyStore();

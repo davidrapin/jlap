@@ -50,7 +50,7 @@ public class HttpProxyChannelInitializer extends ChannelInitializer<SocketChanne
 //            public boolean acceptOutboundMessage(Object msg) throws Exception
 //            {
 //                boolean accept = super.acceptOutboundMessage(msg);
-//                System.out.println("ENCODER accept:_" + accept + "_ (" + msg.getClass() + ")");
+//                log.debug("ENCODER accept:_" + accept + "_ (" + msg.getClass() + ")");
 //                return accept;
 //            }
         });
@@ -72,7 +72,7 @@ public class HttpProxyChannelInitializer extends ChannelInitializer<SocketChanne
 //            @Override
 //            protected void channelIdle(ChannelHandlerContext ctx, IdleStateEvent evt) throws Exception
 //            {
-//                System.out.println("--------" + evt.state());
+//                log.debug("--------" + evt.state());
 //                //super.channelIdle(ctx, evt);
 //            }
 //        });
@@ -94,7 +94,7 @@ public class HttpProxyChannelInitializer extends ChannelInitializer<SocketChanne
                 String method = new String(buffer, US_ASCII);
                 in.resetWriterIndex();
 
-                System.out.println(this + " / " + i.incrementAndGet() + " / '" + method + "'");
+                log.debug(this + " / " + i.incrementAndGet() + " / '" + method + "'");
 //                if (method.startsWith("CONNECT")) {
 //
 //                } else {

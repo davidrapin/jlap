@@ -6,6 +6,8 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -18,6 +20,8 @@ import static io.netty.handler.codec.http.HttpHeaders.*;
  */
 class ResponseForwarder implements HttpResponseListener
 {
+    private static final Logger log = LoggerFactory.getLogger(ResponseForwarder.class);
+
     private final ChannelHandlerContext requestContext;
     private final FullHttpRequest request;
 
@@ -41,7 +45,7 @@ class ResponseForwarder implements HttpResponseListener
             public void operationComplete(ChannelFuture future) throws Exception
             {
                 clientConnectionClosed = true;
-                System.out.println("[CLIENT CLOSED CONNECTION] > " + ResponseForwarder.this.request.getUri());
+                log.info("[CLIENT CLOSED CONNECTION] " + ResponseForwarder.this.request.getUri());
             }
         });
     }
@@ -54,7 +58,7 @@ class ResponseForwarder implements HttpResponseListener
         responseContentLength = getContentLength(response, -1);
         if (responseContentLength < 0) responseContentLength = null;
 
-        System.out.println(request.getUri() + " > response headers (" + response.getStatus() + ")");
+        log.debug(request.getUri() + " : response headers (" + response.getStatus() + ")");
 
         if (clientConnectionClosed) return;
 
@@ -63,7 +67,7 @@ class ResponseForwarder implements HttpResponseListener
             @Override
             public void operationComplete(ChannelFuture future) throws Exception
             {
-                //System.out.println(request.getUri() + " > response headers WRITTEN");
+                //log.debug(request.getUri() + " > response headers WRITTEN");
             }
         });
     }
@@ -78,8 +82,6 @@ class ResponseForwarder implements HttpResponseListener
         final int size = c.data().readableBytes();
         sizeToWrite.addAndGet(size);
 
-        //System.out.println(request.getUri() + " > response content (" + size + ")");
-
         requestContext.channel().write(c).addListener(new ChannelFutureListener()
         {
             @Override
@@ -87,18 +89,16 @@ class ResponseForwarder implements HttpResponseListener
             {
                 if (!future.isSuccess())
                 {
-                    System.out.println("[ERROR FORWARDING RESPONSE] > " + request.getUri());
                     responseContext.channel().close();
                     requestContext.channel().close();
 
                     Throwable t = future.cause();
-                    if (t != null) t.printStackTrace();
-
+                    //if (t != null) t.printStackTrace();
+                    log.error("could not forward response for " + request.getUri(), t);
                     return;
                 }
 
                 sizeWritten.addAndGet(size);
-                // System.out.println(r.getUri() + " > response content WRITTEN");
             }
         });
     }
@@ -106,13 +106,11 @@ class ResponseForwarder implements HttpResponseListener
     @Override
     public void onHttpContentEnd(ChannelHandlerContext ctx)
     {
-        System.out.println(
+        log.debug(
             request.getUri() + " > response end (content-length:" + responseContentLength +
             ", written:" + sizeWritten.get() +
             ", left: " + (sizeToWrite.get() - sizeWritten.get()) + ")"
         );
-
-        //requestContext.flush().addListener(ChannelFutureListener.CLOSE);
 
         if (!requestIsKeepAlive || !responseIsKeepAlive || responseContentLength == null)
         {
@@ -125,7 +123,7 @@ class ResponseForwarder implements HttpResponseListener
     {
         if (clientConnectionClosed) return;
 
-        System.out.println("[ERROR] (" + message  + ") > " + request.getUri());
+        log.error("[ERROR] (" + message + ") > " + request.getUri());
         //if (cause != null) cause.printStackTrace();
 
         sendStatusAndClose(

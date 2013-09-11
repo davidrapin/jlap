@@ -12,6 +12,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundMessageHandlerAdapter;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.ssl.SslHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLEngine;
 import java.nio.charset.Charset;
@@ -28,6 +30,8 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
  */
 public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHttpRequest>
 {
+    private static final Logger log = LoggerFactory.getLogger(HttpProxyHandler.class);
+
     //    private static final Charset US_ASCII = Charset.forName("US-ASCII");
     private final ClientPool clientPool;
     private final SSLContextFactory sslContextFactory;
@@ -72,7 +76,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                 targetServer = NetLoc.forRequest(request);
                 awaitingConnect = true;
                 if (requestsDuringConnect.size() > 0) {
-                    System.out.println("> non empty request buffer (requests-during-connect)");
+                    log.warn("clearing non empty request buffer (requests-during-connect)");
                 }
                 requestsDuringConnect.clear();
 
@@ -82,7 +86,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     @Override
                     public void onSuccess(final SSLCertificate serverCertificate)
                     {
-                        System.out.println("SSL Connect client-side handshake OK");
+                        log.debug("[{}] SSL-Connect proxy:server [handshake OK]", targetServer);
 
                         // remote:server success, response 200:ok to remote:client
                         DefaultFullHttpResponse response = new DefaultFullHttpResponse(
@@ -97,7 +101,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                                 public void operationComplete(ChannelFuture future) throws Exception
                                 {
                                     // 200:ok to remote:client sent successfully
-                                    System.out.println("SSL Connect proxy-side : notified");
+                                    log.debug("[{}] SSL-Connect client:proxy [client notified]", targetServer);
 
                                     // add SSL engine between us and remote:client
                                     SSLEngine engine = sslContextFactory.getServerContext(targetServer, serverCertificate).createSSLEngine();
@@ -105,22 +109,33 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                                     final SslHandler sslhandler = new SslHandler(engine)
                                     {
                                         @Override
+                                        public void channelInactive(ChannelHandlerContext ctx) throws Exception
+                                        {
+                                            super.channelInactive(ctx);
+                                            clientPool.shutdown(targetServer);
+                                        }
+
+                                        @Override
                                         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
                                         {
-                                            System.out.println("> SSL error : " + cause);
+                                            log.error("[" + targetServer + "] SSL error", cause);
                                             //super.exceptionCaught(ctx, cause);
+                                            clientPool.shutdown(targetServer);
                                         }
                                     };
                                     future.channel().pipeline().addFirst("ssl-server", sslhandler);
 
                                     // start handshake with remote:client
-                                    System.out.println("SSL connect : starting proxy-side handshake");
+                                    log.debug("[{}] SSL-connect client:proxy [starting handshake]", targetServer);
                                     sslhandler.handshake(future.channel().newPromise()).addListener(new ChannelFutureListener()
                                     {
                                         @Override
                                         public void operationComplete(ChannelFuture future) throws Exception
                                         {
-                                            System.out.println("SSL proxy-side handshake : success?=" + future.isSuccess());
+                                            log.debug("[{}] SSL-connect client:proxy [handshake success : {}]",
+                                                    targetServer,
+                                                    future.isSuccess()
+                                            );
                                             if(!future.isSuccess()) {
                                                 future.channel().close();
                                             } else {
@@ -139,7 +154,7 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
                     @Override
                     public void onFailure()
                     {
-                        System.out.println("SSL Connect client-side handshake FAILED");
+                        log.warn("[{}] SSL-Connect proxy:server [handshake FAILED]", targetServer);
                         requestContext.channel()
                             .write(new DefaultFullHttpResponse(requestCopy.getProtocolVersion(), BAD_GATEWAY))
                             .addListener(ChannelFutureListener.CLOSE);
@@ -148,6 +163,11 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
             }
             else
             {
+                if (targetServer != null) {
+                    String host = requestCopy.headers().get("Host");
+                    System.out.println(">> TARGET=" + targetServer + " __ HOST=" + host);
+                }
+
                 // classic http request
                 clientPool.sendRequest(targetServer, requestCopy, new ResponseForwarder(requestContext, requestCopy));
             }
@@ -171,9 +191,8 @@ public class HttpProxyHandler extends ChannelInboundMessageHandlerAdapter<FullHt
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception
     {
-        System.out.println("proxy error !");
-        cause.printStackTrace();
-
+        log.error("PROXY ERROR", cause);
+        //cause.printStackTrace();
         //super.exceptionCaught(ctx, cause);
     }
 }

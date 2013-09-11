@@ -4,6 +4,8 @@ import com.davidrapin.jlap.ssl.SSLCertificate;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.handler.codec.http.HttpRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.cert.X509Certificate;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,8 +18,8 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class ClientPool
 {
+    private static final Logger log = LoggerFactory.getLogger(ClientPool.class);
     private final EventLoopGroup eventLoop;
-//    private final ConcurrentMap<NetLoc, SSLCertificate> certificates = new ConcurrentHashMap<NetLoc, SSLCertificate>();
 
     public ClientPool()
     {
@@ -62,7 +64,7 @@ public class ClientPool
 //        {
 //            s += c.getHost() + "=" + c.countResponseListeners() + " | ";
 //        }
-//        System.out.println("listeners : [" + s.substring(0, s.length()-1) + "]");
+//        log.debug("listeners : [" + s.substring(0, s.length()-1) + "]");
 //    }
 
     private synchronized HttpClient getClient(final NetLoc netLoc, final ConnectListener connectListener)
@@ -107,7 +109,7 @@ public class ClientPool
         int listeners = c.countResponseListeners();
         if (listeners > 0)
         {
-            System.out.println("REMOVING CLIENT > " + c.getNetLoc() + " (listeners: " + listeners + ")");
+            log.info("REMOVING CLIENT > " + c.getNetLoc() + " (listeners: " + listeners + ")");
         }
         return c;
     }
@@ -122,10 +124,22 @@ public class ClientPool
         getClient(targetServer, listener);
     }
 
-    public void shutdown()
+    public void shutdownAll()
     {
         for (HttpClient c : connectedClients.values())
         {
+            c.shutdown();
+        }
+        connectedClients.clear();
+    }
+
+    public void shutdown(NetLoc targetServer)
+    {
+        HttpClient c = connectedClients.get(targetServer);
+        if (c != null)
+        {
+            log.info("shutting down client for '{}'", targetServer);
+            connectedClients.remove(targetServer);
             c.shutdown();
         }
     }

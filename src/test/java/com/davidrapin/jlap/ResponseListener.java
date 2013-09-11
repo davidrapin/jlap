@@ -5,6 +5,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.HttpContent;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
 import java.util.Map;
@@ -16,6 +18,8 @@ import java.util.Map;
  */
 public class ResponseListener implements HttpResponseListener
 {
+    private static final Logger log = LoggerFactory.getLogger(ResponseListener.class);
+    
     private final String prefix;
 
     public static String header2string(HttpHeaders h)
@@ -36,26 +40,26 @@ public class ResponseListener implements HttpResponseListener
     @Override
     public void onHttpResponse(HttpResponse r, ChannelHandlerContext ctx)
     {
-        System.out.println(prefix + "__ response headers : (" + r.getProtocolVersion() + ") " + r.getStatus());
-        System.out.println(header2string(r.headers()) + "\n");
+        log.debug(prefix + "__ response headers : (" + r.getProtocolVersion() + ") " + r.getStatus());
+        log.debug(header2string(r.headers()) + "\n");
     }
 
     @Override
     public void onHttpContent(HttpContent content, ChannelHandlerContext ctx)
     {
         String data = content.data().toString(Charset.forName("UTF-8"));
-        System.out.println(prefix + "__ response data : \n'" + data + "'");
+        log.debug(prefix + "__ response data : \n'" + data + "'");
     }
 
     @Override
     public void onHttpContentEnd(ChannelHandlerContext ctx)
     {
-        System.out.println(prefix + "__ response end : -----------------------------\n");
+        log.debug(prefix + "__ response end : -----------------------------\n");
     }
 
     @Override
     public void onError(String message, Throwable cause)
     {
-        System.out.println(prefix + "__ ERROR : " + message + " > " + cause);
+        log.debug(prefix + "__ ERROR : " + message + " > " + cause);
     }
 }

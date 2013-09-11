@@ -9,6 +9,8 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.http.HttpContent;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -22,6 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class HttpClient implements HttpResponseListener
 {
+    private static final Logger log = LoggerFactory.getLogger(HttpClient.class);
     private static AtomicInteger c = new AtomicInteger(0);
 
     private final int id;
@@ -60,7 +63,7 @@ public class HttpClient implements HttpResponseListener
 
     protected void logState(String state)
     {
-        System.out.println(System.currentTimeMillis() + " [CLIENT-" + id + " " + netLoc + "] :" + state);
+        log.info("[CLIENT-{} {}] : {}", id, netLoc, state);
     }
 
     private void connect(EventLoopGroup eventLoop)
@@ -95,6 +98,7 @@ public class HttpClient implements HttpResponseListener
                             public void operationComplete(ChannelFuture future) throws Exception
                             {
                                 logState("disconnected");
+                                notifyResponseListenersError("disconnected");
                                 clientListener.onConnectionClosed(HttpClient.this);
 
                                 // Shut down executor threads to exit.
@@ -118,8 +122,24 @@ public class HttpClient implements HttpResponseListener
         }
     }
 
+    private void notifyResponseListenersError(String message)
+    {
+        if (responseListeners.size() > 0) {
+            log.info("notifying response listeners of an error ({}) : {}", responseListeners.size(), message);
+        } else return;
+        for (HttpResponseListener rl : responseListeners)
+        {
+            rl.onError(message, null);
+        }
+    }
+
     public synchronized void request(final HttpRequest request, final HttpResponseListener listener)
     {
+        // todo: remove this when we are ready to do HTTP 1.1 on top of SSL
+        //if (netLoc.ssl) {
+            // request.setProtocolVersion(HttpVersion.HTTP_1_0);
+        //}
+
         // when connected
         futureConnectedChannel.addListener(new ChannelFutureListener()
         {
@@ -167,7 +187,7 @@ public class HttpClient implements HttpResponseListener
     {
         HttpResponseListener hrl = responseListeners.peek();
         if (hrl == null) {
-            System.out.println("> response with no request (" + response + ")");
+            log.warn("response with no request (" + response.getStatus() + ")");
             return;
         }
         hrl.onHttpResponse(response, ctx);
@@ -191,7 +211,7 @@ public class HttpClient implements HttpResponseListener
         HttpResponseListener listener = responseListeners.poll();
         if (listener == null)
         {
-            logState(message + " (no pending request) (" + cause + ")");
+            logState("error with no pending request '" + message + "'  (" + cause + ")");
         }
         else
         {

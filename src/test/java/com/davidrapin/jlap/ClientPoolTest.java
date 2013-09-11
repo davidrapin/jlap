@@ -1,13 +1,12 @@
 package com.davidrapin.jlap;
 
 import com.davidrapin.jlap.client.ClientPool;
-import com.davidrapin.jlap.client.NetLoc;
-import com.davidrapin.jlap.ssl.SSLCertificate;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.DefaultFullHttpRequest;
 import io.netty.handler.codec.http.HttpMethod;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpVersion;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 /**
@@ -18,6 +17,8 @@ import org.testng.annotations.Test;
 @Test
 public class ClientPoolTest
 {
+    private static final Logger log = LoggerFactory.getLogger(ClientPoolTest.class);
+
     public void test() throws InterruptedException
     {
         ClientPool p1 = new ClientPool();
@@ -41,8 +42,8 @@ public class ClientPoolTest
         p2.sendRequest(r4, new ResponseListener("r4"));
 
         Thread.sleep(20*1000);
-        p1.shutdown();
-        p2.shutdown();
+        p1.shutdownAll();
+        p2.shutdownAll();
     }
 
     public void test2() throws InterruptedException
@@ -51,14 +52,14 @@ public class ClientPoolTest
 
         final HttpRequest r1 = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, HttpMethod.GET, "https://www.google.fr/");
         r1.headers().add("Host", "www.google.fr");
-        final NetLoc n = NetLoc.forRequest(r1);
+        //final NetLoc n = NetLoc.forRequest(r1);
 
         p.sendRequest(r1, new ResponseListener("r1"));
 
-        System.out.println("end :)");
-        Thread.sleep(20*1000);
-        p.shutdown();
-        System.out.println("true end :))");
+        log.debug("end :)");
+        Thread.sleep(20 * 1000);
+        p.shutdownAll();
+        log.debug("true end :))");
     }
 
 

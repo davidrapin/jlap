@@ -8,6 +8,8 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Date: 07/03/13
@@ -17,6 +19,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class HttpProxy
 {
+    private static final Logger log = LoggerFactory.getLogger(HttpProxy.class);
+    
     private final int port;
 
     public HttpProxy(int port)
@@ -47,13 +51,13 @@ public class HttpProxy
             Channel channel = bootstrap.bind().sync().channel();
 
             // listen to close
-            System.out.println("> before closeFuture");
+            log.debug("before closeFuture");
             channel.closeFuture().addListener(new ChannelFutureListener()
             {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception
                 {
-                    System.out.println("> in closeFuture");
+                    log.debug("in closeFuture");
                     future.channel().close();
                 }
             }).sync();
@@ -62,9 +66,9 @@ public class HttpProxy
         }
         finally
         {
-            System.out.println("> before shutdown");
+            log.debug("before shutdown");
             bootstrap.shutdown();
-            System.out.println("> after shutdown");
+            log.debug("after shutdown");
         }
     }
 
